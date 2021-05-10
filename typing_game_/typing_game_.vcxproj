@@ -139,10 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ask_quit.c" />
+    <ClCompile Include="choice_level.c" />
+    <ClCompile Include="combo.c" />
+    <ClCompile Include="event_word.c" />
+    <ClCompile Include="get_word.c" />
+    <ClCompile Include="life_bar.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="test.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="story.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
