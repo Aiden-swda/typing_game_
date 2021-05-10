@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int main()
+int test()
 {
 	printf("테스트");
 	printf(" 완료 ");
