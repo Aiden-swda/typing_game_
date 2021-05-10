@@ -147,7 +147,6 @@
     <ClCompile Include="life_bar.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="story.c" />
-    <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
