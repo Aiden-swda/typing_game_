@@ -39,7 +39,7 @@
     <ClCompile Include="ask_quit.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="main.c">
+    <ClCompile Include="LDM_test.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
