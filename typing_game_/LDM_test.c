@@ -24,22 +24,22 @@ int game_run()
 	double result; //시간값을 저장하기 위한 변수
 
 
-	/*
-	system("mode con cols=120 lines=45"); //콘솔창 크기
+	
+	//system("mode con cols=120 lines=45"); //콘솔창 크기
 	system("title 건덕이를 잡아라!"); //콘솔창 제목
 	system("cls"); // 콘솔창 초기화
 	srand(time(NULL));
 	gotoxy(110, 0);
 	printf("■■■■■\n"); //체력바 테스트
-	*/
+	
 
 	while (1)
 	{
 		gotoxy(5, 5);
 		printf("%d", score);
-		a = rand() % 103; //배열에서 단어 추출하기 위한 랜덤 인덱스 값
+		//a = rand() % 103; //배열에서 단어 추출하기 위한 랜덤 인덱스 값
 		gotoxy(COLS/2-5, 3);
-		printf("%s\n", ex_word[a]); //배열에서 랜덤 추출된 단어 출력
+		printf("%s\n", wordBase[get_random_word()]); //배열에서 랜덤 추출된 단어 출력
 
 		start = clock(); //시간측정 시작
 		
@@ -58,7 +58,7 @@ int game_run()
 		}
 		
 		system("cls"); // 콘솔창 초기화
-		check = strcmp(input, ex_word[a]); //문자열 비교
+		check = strcmp(input, wordBase[get_random_word()]); //문자열 비교
 
 		switch (check)  // 문자열 비교값에 따른 출력
 		{

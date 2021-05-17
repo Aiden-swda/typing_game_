@@ -1,0 +1,6 @@
+apple
+church
+coin
+beat
+tired
+hello
