@@ -5,6 +5,7 @@
 void first()  //첫 화면 출력하는 함수
 {
 	int i;
+
 	for (i = 1; i <= COLS; i++) //첫 째줄 별 출력
 	{
 		printf("*");
@@ -65,4 +66,9 @@ void screen_s(int* story_y) // 대화창 꽉차면 비우는 함수
 	else {
 		*story_y += 2;
 	}
+}
+
+void first_screen()
+{
+
 }
