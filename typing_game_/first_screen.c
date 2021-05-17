@@ -5,6 +5,7 @@
 void first()  //첫 화면 출력하는 함수
 {
 	int i;
+
 	for (i = 1; i <= COLS; i++) //첫 째줄 별 출력
 	{
 		printf("*");
@@ -31,5 +32,43 @@ void first()  //첫 화면 출력하는 함수
 	{
 		printf("*");
 	}
-	
+}
+
+void screen() // 대화창 출력하는 함수
+{
+	int i, j;
+
+	gotoxy(0, LINES - 15);
+	printf("┌");
+	for (i = 0; i < COLS_BOX; i++) printf("─");
+	printf("┐\n");
+
+	for (j = 0; j < LINES_BOX; j++) {
+		printf("│");
+		for (i = 0; i < COLS_BOX; i++) printf(" ");
+		printf("│\n");
+	}
+
+	printf("└");
+	for (i = 0; i < COLS_BOX; i++) printf("─");
+	printf("┘\n");
+
+	return 0;
+}
+
+void screen_s(int* story_y) // 대화창 꽉차면 비우는 함수
+{
+	if (*story_y == (LINES - 4)) {
+		system("cls");
+		screen();
+		*story_y = LINES - 14;
+	}
+	else {
+		*story_y += 2;
+	}
+}
+
+void first_screen()
+{
+
 }

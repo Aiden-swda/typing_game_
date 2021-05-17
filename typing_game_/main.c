@@ -3,7 +3,13 @@
 int main()
 {
 	system("mode con cols=120 lines=45");
-	first();
-	//game_test();
+	srand(time(NULL));
+	
+	void first();
 
+	game_run();
+
+
+
+	return 0;
 }

@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ask_quit.c" />
+    <ClCompile Include="Bumsik_test.c" />
     <ClCompile Include="choice_level.c" />
     <ClCompile Include="combo.c" />
     <ClCompile Include="event_word.c" />
