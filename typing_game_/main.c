@@ -6,10 +6,11 @@ int main()
 	srand(time(NULL));
 	
 	//void first();
+	//story();
 	read_file();
 	game_run();
 
 
 
-	return 0;
+
 }

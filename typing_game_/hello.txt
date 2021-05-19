@@ -1,6 +1,6 @@
 apple
-church
 coin
-beat
+church
 tired
-hello
+beat
+great
