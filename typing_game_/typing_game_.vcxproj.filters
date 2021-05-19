@@ -45,6 +45,9 @@
     <ClCompile Include="screen_print.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="game_run.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

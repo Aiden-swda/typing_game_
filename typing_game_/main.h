@@ -24,6 +24,12 @@ void screen_s(int* story_y);
 //screen_print.c
 void first();
 void screen();
+//game_run.c
+void game_run();
+double get_input_check(int* score, int* check);
+void check_answer(int check, int* score, int* heart);
+//life_bar.c
+void life_bar(int heart); 
 //event_word.c
 
 //combo.c

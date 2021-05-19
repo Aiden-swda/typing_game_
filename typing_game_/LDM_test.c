@@ -27,8 +27,11 @@ int game_run()
 		printf("%d", score);
 		//a = rand() % 103; //배열에서 단어 추출하기 위한 랜덤 인덱스 값
 		gotoxy(COLS/2-5, 3);
+		
+		// 단어 출력 & 입력 받아서 확인까지
 		printf("%s\n", wordBase[get_random_word()]); //배열에서 랜덤 추출된 단어 출력
 
+	
 		start = clock(); //시간측정 시작
 		
 		gotoxy(COLS / 2 - 5, 5);
@@ -47,6 +50,7 @@ int game_run()
 		
 		system("cls"); // 콘솔창 초기화
 		check = strcmp(input, wordBase[get_random_word()]); //문자열 비교
+		//끝
 
 		switch (check)  // 문자열 비교값에 따른 출력
 		{
