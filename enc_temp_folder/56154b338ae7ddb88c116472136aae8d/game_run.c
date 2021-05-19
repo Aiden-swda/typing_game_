@@ -22,7 +22,7 @@ void game_run()
 	{
 	case 0:
 		gotoxy(COLS / 2 - 5, 10);
-		score = score + 10;
+		score = score + 1;
 		printf("맞았습니다!\n");
 		break;
 	case 1:
@@ -88,14 +88,13 @@ double get_input_check(int *score, int *check, int randomNum)
 	
 				 
 	/*
-	//* 난이도 조절 부분
+	* 난이도 조절 부분
 	if ((int)timespent >= 4) 
 	{
 		score = score - (int)(timespent * 5); //경과한 시간에 비례하여 점수 차감
 		heart = heart - 1; //목숨도 같이 차감
 	}
 	*/
-	
 	system("cls");
 
 	for (int i = 0; wordBase[randomNum][i] != 0; i++)
