@@ -33,19 +33,16 @@
     <ClCompile Include="choice_level.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="get_word.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="ask_quit.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="LDM_test.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="first_screen.c">
+    <ClCompile Include="internal_function.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Bumsik_test.c">
+    <ClCompile Include="screen_print.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,5 +50,8 @@
     <ClInclude Include="main.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="hello.txt" />
   </ItemGroup>
 </Project>

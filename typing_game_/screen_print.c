@@ -56,19 +56,3 @@ void screen() // 대화창 출력하는 함수
 	return 0;
 }
 
-void screen_s(int* story_y) // 대화창 꽉차면 비우는 함수
-{
-	if (*story_y == (LINES - 4)) {
-		system("cls");
-		screen();
-		*story_y = LINES - 14;
-	}
-	else {
-		*story_y += 2;
-	}
-}
-
-void first_screen()
-{
-
-}
