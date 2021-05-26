@@ -1,20 +1,22 @@
 //이다민 테스트 파일3
 #include "main.h"
-#define SIZE 6
 
 int game_run()
 {
 
-	
+	char input[15]; //입력받을 단어 배열
 	int a; //랜덤 숫자 받을 변수
 	int check; //문자열 비교한 값 담는 변수
 	int score = 0; //점수 변수
 	int heart = 5; //남은 목숨 변수
-	clock_t start, end;
 	double result; //시간값을 저장하기 위한 변수
+
+	int b = 0;
 
 	char ch;
 	int s_time, j = 0;
+
+	int wordLength;
 
 	//system("mode con cols=120 lines=45"); //콘솔창 크기
 	system("title 건덕이를 잡아라!"); //콘솔창 제목
@@ -26,12 +28,13 @@ int game_run()
 	srand(time(0));
 	s_time = time(0);
 	a = get_random_word(&wordLength);
+	printf("%d", wordLength);
 	gotoxy(COLS / 2 - 5, 3);
 	printf("%s\n", wordBase[a]);
+	
 
 	while (1)
 	{
-		char input[*wordLength]; //입력받을 단어 배열
 		
 		//a = get_random_word(); //배열에서 단어 추출하기 위한 랜덤 인덱스 값
 		//gotoxy(COLS / 2 - 5, 3);
@@ -53,8 +56,20 @@ int game_run()
 		}
 		if (_kbhit())
 		{
-			//gotoxy(COLS / 2 - 5, 5);
+			
 			ch = _getch();
+			gotoxy(COLS / 2 - 5 + j, 5);
+
+			if (ch == 8)
+			{
+				if (j>0)
+				{
+					j--;
+					printf("%c", ch);
+				}
+				
+				
+			}
 			if (ch == 27)
 			{
 				break;
@@ -62,15 +77,21 @@ int game_run()
 			//printf("%c", ch);
 			if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
 			{
+				
 				printf("%c", ch);
 				input[j] = ch;
 				j++;
+				if (j == wordLength)
+				{
+					b = 1;
+				}
 			}
 		}
-		if (j >= *wordLength - 1)
+
+		if ( b==1 )
 		{
 			//printf("%s\n", input);
-			input[*wordLength - 1] = 0;
+			input[wordLength] = 0;
 			for (int i = 0; wordBase[a][i] != 0; i++)  //배열값 마지막에 붙어있는 \n 제거
 			{
 				if (wordBase[a][i] == '\n')
@@ -81,7 +102,7 @@ int game_run()
 			}
 			check = strcmp(input, wordBase[a]); //문자열 비교
 			//printf("%d", check);
-			
+			b = 0;
 			system("cls");
 			switch (check)  // 문자열 비교값에 따른 출력
 			{
@@ -106,7 +127,7 @@ int game_run()
 
 			gotoxy(5, 5);
 			printf("%d", score);
-			a = get_random_word(wordLength);
+			a = get_random_word(&wordLength);
 			gotoxy(COLS / 2 - 5, 3);
 			printf("%s\n", wordBase[a]);
 			s_time = time(0);
