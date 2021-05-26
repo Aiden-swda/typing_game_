@@ -1,6 +1,6 @@
 
 #include "main.h"
-
+/*
 //c.p. : 단계를 받아올건지?
 /*
 void game_run()
@@ -67,7 +67,7 @@ void game_run()
 		//break;
 	}
 }
-
+/*
 double get_input_check(int *score, int *check, int randomNum)
 {
 	char input[WORDLEN]; 

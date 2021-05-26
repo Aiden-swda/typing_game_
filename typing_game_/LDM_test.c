@@ -1,6 +1,6 @@
 //이다민 테스트 파일
 
-/*
+
 #include "main.h"
 
 int game_run()
@@ -18,7 +18,7 @@ int game_run()
 	//system("mode con cols=120 lines=45"); //콘솔창 크기
 	system("title 건덕이를 잡아라!"); //콘솔창 제목
 	system("cls"); // 콘솔창 초기화
-	srand(time(NULL));
+	//srand(time(NULL));
 	gotoxy(110, 0);
 	printf("■■■■■\n"); //체력바 테스트
 	
@@ -27,22 +27,21 @@ int game_run()
 	{
 		gotoxy(5, 5);
 		printf("%d", score);
-		//a = rand() % 103; //배열에서 단어 추출하기 위한 랜덤 인덱스 값
-		
-		
-		// 단어 출력 & 입력 받아서 확인까지
+		a = get_random_word(); //배열에서 단어 추출하기 위한 랜덤 인덱스 값
 		gotoxy(COLS/2-5, 3);
-		printf("%s\n", wordBase[get_random_word()]); //배열에서 랜덤 추출된 단어 출력
+		printf("%s\n", wordBase[a]); //배열에서 랜덤 추출된 단어 출력
 
 	
 		start = clock(); //시간측정 시작
 		
 		gotoxy(COLS / 2 - 5, 5);
 		scanf("%s", input); //사용자 입력 문자열 받아오기
+		//gets_s(input, 20);
 		end = clock(); //시간 측정 정지
 		result = (double)(end - start) / CLOCKS_PER_SEC; //시간 측정값
 		
-		printf("경과한 시간: %f", result);
+		printf("경과한 시간: %f\n", result);
+		
 		Sleep(1000); //시간 보기 위해서 임시로 걸어놓은 딜레이
 		if ((int)result >= 4) //난이도 조절 부분
 		{
@@ -52,8 +51,18 @@ int game_run()
 		}
 		
 		system("cls"); // 콘솔창 초기화
-		check = strcmp(input, wordBase[get_random_word()]); //문자열 비교
-		//끝
+
+		for (int i = 0; wordBase[a][i] !=0 ; i++)  //배열값 마지막에 붙어있는 \n 제거
+		{
+			if (wordBase[a][i] == '\n')
+			{
+				wordBase[a][i] = 0;
+				break;
+			}
+		}
+
+		check = strcmp(input, wordBase[a]); //문자열 비교
+		printf("%d", check);
 
 		switch (check)  // 문자열 비교값에 따른 출력
 		{
@@ -131,4 +140,3 @@ int game_run()
 		}
 	}
 }
-*/
