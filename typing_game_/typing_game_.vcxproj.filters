@@ -36,9 +36,6 @@
     <ClCompile Include="ask_quit.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="LDM_test.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="internal_function.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -46,9 +43,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="game_run.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="LDM_test_2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="LDM_test_3.c">

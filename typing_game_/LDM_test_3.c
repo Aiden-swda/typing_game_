@@ -5,13 +5,13 @@
 int game_run()
 {
 
-	
 	int a; //랜덤 숫자 받을 변수
 	int check; //문자열 비교한 값 담는 변수
 	int score = 0; //점수 변수
 	int heart = 5; //남은 목숨 변수
 	clock_t start, end;
 	double result; //시간값을 저장하기 위한 변수
+	int wordLength;
 
 	char ch;
 	int s_time, j = 0;
@@ -31,7 +31,8 @@ int game_run()
 
 	while (1)
 	{
-		char input[*wordLength]; //입력받을 단어 배열
+		char* inputArray = (int*)malloc(sizeof(char) * wordLength);
+		//char input[wordLength]; //입력받을 단어 배열
 		
 		//a = get_random_word(); //배열에서 단어 추출하기 위한 랜덤 인덱스 값
 		//gotoxy(COLS / 2 - 5, 3);
@@ -50,6 +51,7 @@ int game_run()
 			printf("%s\n", wordBase[a]);
 			s_time = time(0);
 			j = 0;
+			free(inputArray);
 		}
 		if (_kbhit())
 		{
@@ -63,14 +65,14 @@ int game_run()
 			if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
 			{
 				printf("%c", ch);
-				input[j] = ch;
+				inputArray[j] = ch;
 				j++;
 			}
 		}
-		if (j >= *wordLength - 1)
+		if (j >= wordLength)
 		{
 			//printf("%s\n", input);
-			input[*wordLength - 1] = 0;
+			inputArray[wordLength] = 0;
 			for (int i = 0; wordBase[a][i] != 0; i++)  //배열값 마지막에 붙어있는 \n 제거
 			{
 				if (wordBase[a][i] == '\n')
@@ -79,7 +81,7 @@ int game_run()
 					break;
 				}
 			}
-			check = strcmp(input, wordBase[a]); //문자열 비교
+			check = strcmp(inputArray, wordBase[a]); //문자열 비교
 			//printf("%d", check);
 			
 			system("cls");
@@ -106,11 +108,12 @@ int game_run()
 
 			gotoxy(5, 5);
 			printf("%d", score);
-			a = get_random_word(wordLength);
+			a = get_random_word(&wordLength);
 			gotoxy(COLS / 2 - 5, 3);
 			printf("%s\n", wordBase[a]);
 			s_time = time(0);
 			j = 0;
+			free(inputArray);
 		}
 
 		if (score >= 50) // 점수에 따른 동작
