@@ -5,7 +5,7 @@
 int game_run()
 {
 
-	char input[SIZE]; //입력받을 단어 배열
+	
 	int a; //랜덤 숫자 받을 변수
 	int check; //문자열 비교한 값 담는 변수
 	int score = 0; //점수 변수
@@ -25,12 +25,13 @@ int game_run()
 
 	srand(time(0));
 	s_time = time(0);
-	a = get_random_word();
+	a = get_random_word(&wordLength);
 	gotoxy(COLS / 2 - 5, 3);
 	printf("%s\n", wordBase[a]);
 
 	while (1)
 	{
+		char input[*wordLength]; //입력받을 단어 배열
 		
 		//a = get_random_word(); //배열에서 단어 추출하기 위한 랜덤 인덱스 값
 		//gotoxy(COLS / 2 - 5, 3);
@@ -44,7 +45,7 @@ int game_run()
 
 			gotoxy(5, 5);
 			printf("%d", score);
-			a = get_random_word();
+			a = get_random_word(&wordLength);
 			gotoxy(COLS / 2 - 5, 3);
 			printf("%s\n", wordBase[a]);
 			s_time = time(0);
@@ -66,10 +67,10 @@ int game_run()
 				j++;
 			}
 		}
-		if (j >= SIZE - 1)
+		if (j >= *wordLength - 1)
 		{
 			//printf("%s\n", input);
-			input[SIZE - 1] = 0;
+			input[*wordLength - 1] = 0;
 			for (int i = 0; wordBase[a][i] != 0; i++)  //배열값 마지막에 붙어있는 \n 제거
 			{
 				if (wordBase[a][i] == '\n')
@@ -105,7 +106,7 @@ int game_run()
 
 			gotoxy(5, 5);
 			printf("%d", score);
-			a = get_random_word();
+			a = get_random_word(wordLength);
 			gotoxy(COLS / 2 - 5, 3);
 			printf("%s\n", wordBase[a]);
 			s_time = time(0);

@@ -66,6 +66,6 @@ void show_word();
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 
 int arrayNum; //랜덤 뽑은 배열의 행
 int totalScore; //총 점수
-int wordLength;
+int *wordLength;
 
 

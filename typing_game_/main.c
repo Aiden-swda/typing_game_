@@ -2,6 +2,7 @@
 
 int main()
 {
+	/*
 	int input; //사용자 입력 (메뉴선택)
 	//settings
 	system("mode con cols=120 lines=45");
@@ -42,6 +43,8 @@ int main()
 	//game run
 	
 	//for(int i = 0; i = 5; i++)
+	*/
+	read_file();
 	game_run();
 
 	//test();
