@@ -2,8 +2,9 @@
 
 int main()
 {
-	/*
+	
 	int input; //사용자 입력 (메뉴선택)
+
 	//settings
 	system("mode con cols=120 lines=45");
 	srand(time(NULL));
@@ -21,8 +22,7 @@ int main()
 	{
 	case 1:
 		//게임실행함수
-		screen();
-		print_letter("게임 실행 함수");
+		game_run();
 		break;
 	case 2:
 		//도움말 보기
@@ -44,11 +44,6 @@ int main()
 	//game run
 	
 	//for(int i = 0; i = 5; i++)
-	*/
-	read_file();
-	game_run();
-
-	//test();
-
+	
 	return 0;
 }

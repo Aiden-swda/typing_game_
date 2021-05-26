@@ -40,7 +40,7 @@ int game_run()
 		//gotoxy(COLS / 2 - 5, 3);
 		//printf("%s\n", wordBase[a]); //배열에서 랜덤 추출된 단어 출력
 
-		if (time(0) == s_time + 5)
+		if (time(0) == s_time + 5) //시간 확인
 		{
 			system("cls");
 			heart = heart - 1;
@@ -60,20 +60,18 @@ int game_run()
 			ch = _getch();
 			gotoxy(COLS / 2 - 5 + j, 5);
 
+			//Backspace 처리
 			if (ch == 8)
 			{
 				if (j > 0)
 				{
 					j--;
-					printf("%c", ch);
+					gotoxy(COLS / 2 - 5 + j, 5);
+					printf(" ");
+					gotoxy(COLS / 2 - 5 + j, 5);
 				}
-
-
 			}
-			if (ch == 27)
-			{
-				break;
-			}
+
 			//printf("%c", ch);
 			if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
 			{
