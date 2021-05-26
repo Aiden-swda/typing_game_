@@ -140,12 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ask_quit.c" />
-    <ClCompile Include="Bumsik_test.c" />
     <ClCompile Include="choice_level.c" />
     <ClCompile Include="combo.c" />
     <ClCompile Include="event_word.c" />
-    <ClCompile Include="first_screen.c" />
-    <ClCompile Include="get_word.c" />
+    <ClCompile Include="game_run.c" />
+    <ClCompile Include="screen_print.c" />
+    <ClCompile Include="internal_function.c" />
     <ClCompile Include="LDM_test.c" />
     <ClCompile Include="life_bar.c" />
     <ClCompile Include="main.c">
@@ -155,6 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="hello.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,21 +1,11 @@
 //이다민 테스트 파일
+
+/*
 #include "main.h"
 
 int game_run()
 {
 	char input[20]; //입력받을 단어 배열
-	/*
-		char ex_word[103][20] = { "dog", "cat", "bottle", "phone", "robot", "green", "elephant", "include", "sky", "game", "hyomin", 
-		"jaemin", "max", "knife", "glass", "class", "art", "smart", "bell", "carry", "climb", "between", "blow", "album", "ago", "among", "animal", "any", "box", 
-		"and", "board", "body", "child", "classmate", "city", "boy", "bridge", "clean", 
-		"club", "coat", "bright", "coin", "chopstick", "coffee", "cold", "chance", "chalk", "chair", "cheap", "blue", 
-		"before", "bowl", "aunt", "as", "away", "bicycle", "church", "card", "hold", 
-		"chose", "come", "drink", "give", "get", "hurt", "lay","had", "feed", "lend", "met", "wsing", "throw", "wet", "tell", 
-		"set", "wind", "wear", "write", "spend", "stand", "worn", "win", "sweep", "account", "achieve", "across", "accept", "above", "ability", "abuse", 
-		"abnormal", "absurd", "acceptance", "according", "absent", "nation", "past", "value", "though", "person", "machine", "stand", "null" }; //단어들
-	*/
-
-
 	int a; //랜덤 숫자 받을 변수
 	int check; //문자열 비교한 값 담는 변수
 	int score = 0; //점수 변수
@@ -41,6 +31,7 @@ int game_run()
 		gotoxy(COLS/2-5, 3);
 		printf("%s\n", wordBase[a]); //배열에서 랜덤 추출된 단어 출력
 
+	
 		start = clock(); //시간측정 시작
 		
 		gotoxy(COLS / 2 - 5, 5);
@@ -149,3 +140,4 @@ int game_run()
 		}
 	}
 }
+*/

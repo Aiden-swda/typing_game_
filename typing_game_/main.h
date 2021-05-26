@@ -7,19 +7,37 @@
 #include <windows.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h> // strcmp 함수가 선언된 헤더 파일 - strcmp함수는 문자열 비교함수
+#include <string.h> 
 
-
-//함수 선언
-void first();
-void gotoxy(int x, int y);
-int game_run();
-void ColorSet(int color_number);
-void screen();
+//함수 선언(파일별 구분)
+//main.c
+int main();
+//story.c
 void story();
-void screen_s(int*);
+//internal_functions.c
+void gotoxy(int x, int y);
+void ColorSet(int color_number);
+void texts(char text[]);
 void read_file();
 int get_random_word();
+void screen_s(int* story_y);
+//screen_print.c
+void first();
+void screen();
+//game_run.c
+void game_run();
+double get_input_check(int *score, int *check);
+//void check_answer(int check, int *score, int *heart);
+//life_bar.c
+void life_bar(int heart); 
+//event_word.c
+
+//combo.c
+
+//choice_level.c
+
+//ask_quit.c
+
 
 
 //기호상수 선언
