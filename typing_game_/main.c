@@ -15,8 +15,10 @@ int main()
 	while (1) {
 		system("cls");
 		//intro
+		English();
 		first();
 		screen();
+		emoticon();
 		print_letter("메뉴를 입력하세요 : ");
 		menuInput = input_menu();
 		switch (menuInput)
@@ -45,8 +47,10 @@ int main()
 			break;
 		case 2:
 			//도움말 보기
+			system("cls");
 			screen();
 			print_letter("도움말 보기");
+			print_help();
 			break;
 		case 3:
 			screen();

@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h> 
-#include<conio.h>
+#include <conio.h>
 
 
 //함수 선언(파일별 구분)
@@ -33,6 +33,10 @@ void first();
 void screen();
 void print_letter(char* s);
 void show_level_select();
+void emoticon();
+void print_help();
+void print_star();
+void English();
 
 //game_run.c
 int game_run();
