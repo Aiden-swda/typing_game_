@@ -30,7 +30,8 @@ int main()
 		break;
 	case 3:
 		screen();
-		printf("ÃÑ Á¡¼ö : %d", totalScore);
+		print_letter("ÃÑ Á¡¼ö : ");
+		printf("%d \n", totalScore);
 		break;
 	case 4:
 		return 0;

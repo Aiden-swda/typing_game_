@@ -60,7 +60,7 @@ void print_letter(char *s)
 {
 	int story_x = 2;
 	int story_y = LINES - 14;
-
+	screen();
 	gotoxy(story_x, story_y);
 	texts(s); // texts함수로 텍스트 출력 천천히하기
 	Sleep(1000);

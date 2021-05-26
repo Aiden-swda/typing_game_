@@ -2,6 +2,7 @@
 #include "main.h"
 
 //c.p. : 단계를 받아올건지?
+/*
 void game_run()
 {
 	char input[WORDLEN]; //입력받을 단어 배열
@@ -95,7 +96,7 @@ double get_input_check(int *score, int *check, int randomNum)
 		heart = heart - 1; //목숨도 같이 차감
 	}
 	*/
-	
+	/*
 	system("cls");
 
 	for (int i = 0; wordBase[randomNum][i] != 0; i++)
