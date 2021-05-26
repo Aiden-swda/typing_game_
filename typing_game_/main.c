@@ -11,15 +11,15 @@ int main()
 	read_file();
 	
 	system("pause");
-
+	system("cls");
+	English();
 	while (1) {
 		system("cls");
 		//intro
-		English();
 		first();
 		screen();
 		emoticon();
-		print_letter("메뉴를 입력하세요 : ");
+		print_letter_in_box("메뉴를 입력하세요 : ");
 		menuInput = input_menu();
 		switch (menuInput)
 		{
@@ -27,7 +27,7 @@ int main()
 			//게임실행함수
 			show_level_select();
 			screen();
-			print_letter("메뉴를 입력하세요 : ");
+			print_letter_in_box("메뉴를 입력하세요 : ");
 			levelInput = get_levelInput();
 			switch (levelInput)
 			{
@@ -49,12 +49,12 @@ int main()
 			//도움말 보기
 			system("cls");
 			screen();
-			print_letter("도움말 보기");
+			print_letter_in_box("도움말 보기");
 			print_help();
 			break;
 		case 3:
 			screen();
-			print_letter("총 점수 : ");
+			print_letter_in_box("총 점수 : ");
 			printf("%d \n", totalScore);
 			break;
 		case 4:

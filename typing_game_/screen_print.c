@@ -4,7 +4,7 @@
 
 void first()  //첫 화면 출력하는 함수
 {
-	print_star();
+	//print_star();
 	ColorSet(7);
 	gotoxy(COLS / 2 - 12, LINES / 2 - 6);
 	printf("  ");
@@ -78,21 +78,6 @@ void screen() // 대화창 출력하는 함수
 	printf("└");
 	for (i = 0; i < COLS_BOX; i++) printf("─");
 	printf("┘\n");
-
-	return 0;
-}
-
-void print_letter(char *s)
-{
-	int story_x = 2;
-	int story_y = LINES - 14;
-	screen();
-	gotoxy(story_x, story_y);
-	texts(s); // texts함수로 텍스트 출력 천천히하기
-	Sleep(500);
-	screen_s(&story_y);  // screen_s함수로 story_y값 전달 후 조건에 따라 story_y값 변경
-
-	return 0;
 }
 
 void emoticon() // 첫 화면 이모티콘
@@ -158,43 +143,7 @@ void emoticon() // 첫 화면 이모티콘
 	ColorSet(7);  // 타자 임티 종료
 	
 }
-void print_help() // 도움말 출력
-{
-	gotoxy(15, 13);
-	printf("1. 화면에 나오는 영어단어를 똑같이 따라 입력해주세요. ");
-	ColorSet(12);
-	printf("빨리 입력");
-	ColorSet(7);
-	printf("할 수록 더 많은 점수를 얻습니다.");
-	gotoxy(15, 14);
-	printf("2. 체력이 다 떨어지면 점수와 상관없이 ");
-	ColorSet(14);
-	printf("게임오버");
-	ColorSet(7);
-	printf("입니다. 정확히 입력합시다!!");
-	gotoxy(15, 15);
-	printf("3. 콤보를 쌓으면 ");
-	ColorSet(10);
-	printf("추가 점수");
-	ColorSet(7);
-	printf("를 획득하실 수 있습니다. 고득점을 노려보세요!");
-	gotoxy(15, 16);
-	printf("4. 체력이 떨어지면 일정확률로 ");
-	ColorSet(11);
-	printf("이벤트 단어");
-	ColorSet(7);
-	printf("가 출몰합니다. 맞혀서 체력을 회복합시다~");
-	gotoxy(15, 17);
-	printf("5. 쉬움이나 보통 난이도를 ");
-	ColorSet(13);
-	printf("클리어");
-	ColorSet(7);
-	printf("시 자동으로 다음 난이도로 넘어갑니다. 성장한 실력을 보여주세요!");
-	gotoxy(15, 19);
-	printf("메인화면으로 돌아가고 싶다면 아무 숫자나 입력하세요.");
-	int n;
-	scanf("%d", &n);
-}
+
 void print_star()  // 무지개 별 출력
 {
 	int i;
@@ -219,6 +168,7 @@ void print_star()  // 무지개 별 출력
 			d++;
 		ColorSet(d);
 	}
+
 }
 void English() // English 출력
 {

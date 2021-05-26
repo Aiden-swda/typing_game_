@@ -17,6 +17,7 @@ int main();
 
 //story.c
 void story();
+void print_help();
 
 //internal_functions.c
 void gotoxy(int x, int y);
@@ -27,14 +28,14 @@ int get_random_word(int* wordLength);
 void screen_s(int* story_y);
 int input_menu();
 int get_levelInput();
+void print_letter_in_box(char* s);
+
 
 //screen_print.c
 void first();
 void screen();
-void print_letter(char* s);
 void show_level_select();
 void emoticon();
-void print_help();
 void print_star();
 void English();
 
