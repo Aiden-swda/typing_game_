@@ -27,9 +27,9 @@ void read_file() //파일 읽기
 {
 	int i, j = 0;
 	//파일열기 
-	FILE* fp = fopen("hello.txt", "r");
+	FILE* fp = fopen("wordBase.txt", "r");
 	//for 문으로 한줄당 하나씩 배열에 저장 
-	for (i = 0; i < WORDLEN; i++)
+	for (i = 0; i < WORDNUM; i++)
 	{
 		fgets(wordBase[j], WORDLEN, fp);
 		j++;
@@ -37,9 +37,12 @@ void read_file() //파일 읽기
 	fclose(fp);
 }
 
-int get_random_word() //단어 랜덤으로 꺼내기
+int get_random_word(int *wordLength) //단어 랜덤으로 꺼내기
 {
+	//랜덤으로 단어 꺼내기
 	arrayNum = rand() % WORDNUM; 
+	//단어의 길이 파악
+	*wordLength = strlen(wordBase[arrayNum]) - 1;
 	return arrayNum;
 }
 
@@ -53,4 +56,14 @@ void screen_s(int* story_y) // 대화창 꽉차면 비우는 함수
 	else {
 		*story_y += 2;
 	}
+}
+
+int input_menu()
+{
+	int input;
+	scanf("%d", &input);
+	if ((input <= 4) && (input >= 1))
+		return input;
+	else
+		input_menu();
 }

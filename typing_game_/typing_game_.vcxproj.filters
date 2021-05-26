@@ -62,5 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="hello.txt" />
+    <Text Include="wordBase.txt" />
   </ItemGroup>
 </Project>

@@ -56,3 +56,15 @@ void screen() // 대화창 출력하는 함수
 	return 0;
 }
 
+void print_letter(char *s)
+{
+	int story_x = 2;
+	int story_y = LINES - 14;
+
+	gotoxy(story_x, story_y);
+	texts(s); // texts함수로 텍스트 출력 천천히하기
+	Sleep(1000);
+	screen_s(&story_y);  // screen_s함수로 story_y값 전달 후 조건에 따라 story_y값 변경
+
+	return 0;
+}

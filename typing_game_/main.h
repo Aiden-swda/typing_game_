@@ -14,21 +14,28 @@
 //함수 선언(파일별 구분)
 //main.c
 int main();
+
 //story.c
 void story();
+
 //internal_functions.c
 void gotoxy(int x, int y);
 void ColorSet(int color_number);
 void texts(char text[]);
 void read_file();
-int get_random_word();
+int get_random_word(int* wordLength);
 void screen_s(int* story_y);
+int input_menu();
+
 //screen_print.c
 void first();
 void screen();
+void print_letter(char* s);
+
 //game_run.c
 int game_run();
 double get_input_check(int *score, int *check);
+
 //void check_answer(int check, int *score, int *heart);
 //life_bar.c
 void life_bar(int heart); 
@@ -52,12 +59,13 @@ void show_word();
 #define LINES 45
 #define COLS_BOX 115
 #define LINES_BOX 12
-#define WORDNUM 6 //단어개수
-#define WORDLEN 20 //단어글자수
+#define WORDNUM 1000 //단어개수
+#define WORDLEN 15 //단어글자수
 
 //전역 변수(배열) 선언
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 
 int arrayNum; //랜덤 뽑은 배열의 행
+int totalScore; //총 점수
 int wordLength;
 
 
