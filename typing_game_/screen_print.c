@@ -34,6 +34,34 @@ void first()  //첫 화면 출력하는 함수
 	}
 }
 
+void show_level_select()  //첫 화면 출력하는 함수
+{
+	int i;
+	system("cls");
+	for (i = 1; i <= COLS; i++) //첫 째줄 별 출력
+	{
+		printf("*");
+	}
+	gotoxy(COLS / 2 - 12, LINES / 2 - 6);
+	printf("  ");
+	ColorSet(94);
+	printf("<난이도 선택>");
+	ColorSet(7);
+	//gotoxy(COLS / 2 - 12, LINES / 2 - 5);
+	//printf("우리 조 이름");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 3);
+	printf("1. 쉬움 (시간 제한 7초)");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 2);
+	printf("2. 보통 (시간 제한 5초");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 1);
+	printf("3. 어려움 (시간 제한 3초)");
+	gotoxy(COLS / 2 - 12, LINES / 2);
+	printf("4. 다시 메뉴로\n");
+	gotoxy(COLS / 2 - 12, LINES / 2 + 2);
+	printf("입력:");
+	gotoxy(0, LINES - 5);
+}
+
 void screen() // 대화창 출력하는 함수
 {
 	int i, j;

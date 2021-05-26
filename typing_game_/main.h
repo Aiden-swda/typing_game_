@@ -26,11 +26,13 @@ void read_file();
 int get_random_word(int* wordLength);
 void screen_s(int* story_y);
 int input_menu();
+int get_levelInput();
 
 //screen_print.c
 void first();
 void screen();
 void print_letter(char* s);
+void show_level_select();
 
 //game_run.c
 int game_run();
@@ -47,11 +49,6 @@ void life_bar(int heart);
 
 //ask_quit.c
 
-//LDM_test_2.c
-int test();
-
-//LDM_test_3.c
-void show_word();
 
 
 //기호상수 선언

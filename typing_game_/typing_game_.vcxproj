@@ -144,7 +144,6 @@
     <ClCompile Include="combo.c" />
     <ClCompile Include="event_word.c" />
     <ClCompile Include="game_run.c" />
-    <ClCompile Include="LDM_test_3.c" />
     <ClCompile Include="screen_print.c" />
     <ClCompile Include="internal_function.c" />
     <ClCompile Include="life_bar.c" />

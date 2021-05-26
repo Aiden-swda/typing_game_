@@ -45,9 +45,6 @@
     <ClCompile Include="game_run.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="LDM_test_3.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

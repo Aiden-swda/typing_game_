@@ -67,3 +67,13 @@ int input_menu()
 	else
 		input_menu();
 }
+
+int get_levelInput()
+{
+	int input;
+	scanf("%d", &input);
+	if ((input <= 4) && (input >= 1))
+		return input;
+	else
+		get_levelInput();
+}

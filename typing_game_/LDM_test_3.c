@@ -35,7 +35,6 @@ int game_run()
 
 	while (1)
 	{
-
 		//a = get_random_word(); //배열에서 단어 추출하기 위한 랜덤 인덱스 값
 		//gotoxy(COLS / 2 - 5, 3);
 		//printf("%s\n", wordBase[a]); //배열에서 랜덤 추출된 단어 출력
