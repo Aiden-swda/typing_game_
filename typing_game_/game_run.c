@@ -1,6 +1,6 @@
 
 #include "main.h"
-
+/*
 //c.p. : 단계를 받아올건지?
 void game_run()
 {
@@ -66,7 +66,7 @@ void game_run()
 		//break;
 	}
 }
-
+/*
 double get_input_check(int *score, int *check, int randomNum)
 {
 	char input[WORDLEN]; 
@@ -95,7 +95,7 @@ double get_input_check(int *score, int *check, int randomNum)
 		heart = heart - 1; //목숨도 같이 차감
 	}
 	*/
-	
+	/*
 	system("cls");
 
 	for (int i = 0; wordBase[randomNum][i] != 0; i++)

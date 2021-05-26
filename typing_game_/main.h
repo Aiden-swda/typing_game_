@@ -1,6 +1,6 @@
 // main 헤더파일 입니다
 
-#define _CRT_SECURE_NO_WARNINGS
+//#define _CRT_SECURE_NO_WARNINGS
 
 //헤더파일 포함
 #include <stdio.h>
@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h> 
+#include<conio.h>
+
 
 //함수 선언(파일별 구분)
 //main.c
@@ -25,7 +27,7 @@ void screen_s(int* story_y);
 void first();
 void screen();
 //game_run.c
-void game_run();
+int game_run();
 double get_input_check(int *score, int *check);
 //void check_answer(int check, int *score, int *heart);
 //life_bar.c
@@ -38,6 +40,11 @@ void life_bar(int heart);
 
 //ask_quit.c
 
+//LDM_test_2.c
+int test();
+
+//LDM_test_3.c
+void show_word();
 
 
 //기호상수 선언
@@ -51,5 +58,6 @@ void life_bar(int heart);
 //전역 변수(배열) 선언
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 
 int arrayNum; //랜덤 뽑은 배열의 행
+int wordLength;
 
 

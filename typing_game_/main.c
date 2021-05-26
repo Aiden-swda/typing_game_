@@ -10,8 +10,10 @@ int main()
 	//first();
 	read_file();
 	
-	for(int i = 0; i = 5; i++)
+	//for(int i = 0; i = 5; i++)
 	game_run();
+
+	//test();
 
 	return 0;
 }

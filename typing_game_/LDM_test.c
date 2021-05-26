@@ -1,6 +1,6 @@
 //이다민 테스트 파일
 
-/*
+
 #include "main.h"
 
 int game_run()
@@ -43,7 +43,7 @@ int game_run()
 		printf("경과한 시간: %f\n", result);
 		
 		Sleep(1000); //시간 보기 위해서 임시로 걸어놓은 딜레이
-		if ((int)result >= 1) //난이도 조절 부분
+		if ((int)result >= 4) //난이도 조절 부분
 		{
 			score = score - (int)(result*5); //경과한 시간에 비례하여 점수 차감
 			heart = heart - 1; //목숨도 같이 차감
@@ -62,7 +62,7 @@ int game_run()
 		}
 
 		check = strcmp(input, wordBase[a]); //문자열 비교
-
+		printf("%d", check);
 
 		switch (check)  // 문자열 비교값에 따른 출력
 		{
@@ -140,4 +140,3 @@ int game_run()
 		}
 	}
 }
-*/

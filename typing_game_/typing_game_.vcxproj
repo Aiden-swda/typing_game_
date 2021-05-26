@@ -144,9 +144,13 @@
     <ClCompile Include="combo.c" />
     <ClCompile Include="event_word.c" />
     <ClCompile Include="game_run.c" />
+    <ClCompile Include="LDM_test_2.c" />
+    <ClCompile Include="LDM_test_3.c" />
     <ClCompile Include="screen_print.c" />
     <ClCompile Include="internal_function.c" />
-    <ClCompile Include="LDM_test.c" />
+    <ClCompile Include="LDM_test.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="life_bar.c" />
     <ClCompile Include="main.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
