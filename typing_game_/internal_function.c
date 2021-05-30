@@ -19,7 +19,7 @@ void texts(char text[]) // 텍스트 출력시간 설정
 	for (int i = 0; i < strlen(text); i++)
 	{
 		printf("%c", text[i]);
-		Sleep(80);
+		Sleep(50);
 	}
 }
 
@@ -58,24 +58,18 @@ void screen_s(int* story_y) // 대화창 꽉차면 비우는 함수
 	}
 }
 
-int input_menu()
-{
-	int input;
-	scanf("%d", &input);
-	if ((input <= 4) && (input >= 1))
-		return input;
-	else
-		input_menu();
-}
+int keyControl() {
+	char temp = _getch();
+	if (temp == ' ')
+		return SUBMIT;
+	else if (temp == -32){
+		temp = _getch();
 
-int get_levelInput()
-{
-	int input;
-	scanf("%d", &input);
-	if ((input <= 4) && (input >= 1))
-		return input;
-	else
-		get_levelInput();
+		if (temp == 72)
+			return UP;
+		else if (temp == 80)
+			return DOWN;
+	}
 }
 
 void print_letter_in_box(char* s)
