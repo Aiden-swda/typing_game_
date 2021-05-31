@@ -56,7 +56,7 @@ int game_run(int level)
 		}
 		if (_kbhit())
 		{
-
+			ColorSet(7);
 			ch = _getch();
 			gotoxy(COLS / 2 - 5 + j, 5);
 
@@ -152,6 +152,7 @@ int game_run(int level)
 			switch (level)
 			{
 			case 7:
+				ColorSet(7);
 				printf("'쉬움' 단계를 클리어 하셨습니다!");
 				nextInput = ask_next_level();
 				switch (nextInput) {
@@ -163,6 +164,7 @@ int game_run(int level)
 				}
 				break;
 			case 5:
+				ColorSet(7);
 				printf("'보통' 단계를 클리어 하셨습니다!");
 				nextInput = ask_next_level();
 				switch (nextInput) {
@@ -174,17 +176,19 @@ int game_run(int level)
 				}
 				break;
 			case 3:
-				printf("'어려움' 단계를 클리어 하셨습니다!");
+				ColorSet(7);
+				printf("'어려움' 단계를 클리어 하셨습니다!\n");
 				Sleep(1500);
 				printf("메인메뉴로 돌아갑니다.");
 				break;
 			}
-			Sleep(2000); //2초 딜레이
+			//Sleep(2000); //2초 딜레이
 			break;
 		}
 		else if (heart == 0) //목숨이 0이 되었을때의 동작
 		{
 			totalScore = totalScore + score; //총 점수 관리
+			ColorSet(7);
 
 			system("cls"); // 콘솔창 초기화
 			screen();
