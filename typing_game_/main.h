@@ -26,15 +26,14 @@ void texts(char text[]);
 void read_file();
 int get_random_word(int* wordLength);
 void screen_s(int* story_y);
-int input_menu();
-int get_levelInput();
 void print_letter_in_box(char* s);
+int keyControl();
 
 
 //screen_print.c
-void first();
+int first_menu();
 void screen();
-void show_level_select();
+int second_menu();
 void emoticon();
 void print_star();
 void English();
@@ -55,7 +54,6 @@ void life_bar(int heart);
 //ask_quit.c
 
 
-
 //기호상수 선언
 #define COLS 120
 #define LINES 45
@@ -63,6 +61,9 @@ void life_bar(int heart);
 #define LINES_BOX 12
 #define WORDNUM 1000 //단어개수
 #define WORDLEN 15 //단어글자수
+#define UP 0
+#define DOWN 1
+#define SUBMIT 2
 
 //전역 변수(배열) 선언
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 

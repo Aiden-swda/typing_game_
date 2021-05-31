@@ -2,62 +2,131 @@
 
 #include "main.h"
 
-void first()  //첫 화면 출력하는 함수
+int first_menu()  //첫 화면 출력하는 함수
 {
+	int x = COLS / 2 - 8;
+	int y = LINES / 2 - 7;
+
 	//print_star();
 	ColorSet(7);
-	gotoxy(COLS / 2 - 12, LINES / 2 - 6);
-	printf("  ");
-	ColorSet(121);
-	printf("<건덕이 잡기>");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 13);
+	printf("=====================");
+	gotoxy(COLS / 2- 13, LINES / 2 - 12);
+	printf("│    건덕이 잡기v1   │");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 11);
+	printf("=====================");
 	ColorSet(7);
-	gotoxy(COLS / 2 - 12, LINES / 2 - 5);
-	printf("made by ");
-	ColorSet(121);
-	printf("[건구스]");
+	gotoxy(x, y);
+	printf("> 게임 시작");
+	gotoxy(x, y+2);
+	printf("  도움말");
+	gotoxy(x, y+4);
+	printf("  점수 보기");
+	gotoxy(x, y+6);
+	printf("  게임종료");
 	ColorSet(7);
-	gotoxy(COLS / 2 - 12, LINES / 2 - 3);
-	printf("1. 게임 시작");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 2);
-	printf("2. 도움말(첫판 필수)");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 1);
-	printf("3. 점수 보기");
-	gotoxy(COLS / 2 - 12, LINES / 2);
-	printf("4. 게임종료\n");
+	gotoxy(COLS - 21, LINES - 17);
+	printf("made by [ 건구스 ]");
+
+	screen();
+	emoticon();
+	print_letter_in_box("방향키로 움직인 뒤, 스페이스 바로 메뉴를 선택하세요");
+
+	gotoxy(x, y);
+
+	while (1) {
+		int n = keyControl();
+		switch (n) {
+		case UP: {
+			if (y > LINES / 2 - 7) {
+				gotoxy(x, y);
+				printf(" ");
+				y -= 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case DOWN: {
+			if (y < LINES / 2 - 1) {
+				gotoxy(x, y);
+				printf(" ");
+				y += 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case SUBMIT:
+			return y - (LINES / 2 - 7);
+		}
+	}
 }
 
-void show_level_select()  // 선택 화면 출력하는 함수
+int second_menu()  // 선택 화면 출력하는 함수
 {
+	int x = COLS / 2 - 8;
+	int y = LINES / 2 - 7;
+
 	system("cls");
 	print_star();
-	gotoxy(COLS / 2 - 12, LINES / 2 - 6);
-	printf("  ");
-	ColorSet(11);
-	printf("<난이도 선택>");
 	ColorSet(7);
-	//gotoxy(COLS / 2 - 12, LINES / 2 - 5);
-	//printf("우리 조 이름");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 3);
-	printf("1. ");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 13);
+	printf("=====================");
+	gotoxy(COLS / 2 - 13, LINES / 2 - 12);
+	printf("│     난이도 선택    │");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 11);
+	printf("=====================");
+	gotoxy(x, y);
+	printf("> ");
 	ColorSet(14);
 	printf("쉬움");
-	ColorSet(7);
-	printf(" (시간 제한 7초)");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 2);
-	printf("2. ");
+	gotoxy(x+2, y+2);
 	ColorSet(12);
 	printf("보통");
-	ColorSet(7);
-	printf(" (시간 제한 5초");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 1);
-	printf("3. ");
+	gotoxy(x+2, y+4);
 	ColorSet(192);
 	printf("어려움");
 	ColorSet(7);
-	printf(" (시간 제한 3초)");
-	gotoxy(COLS / 2 - 12, LINES / 2);
-	printf("4. 다시 메뉴로\n");
-	gotoxy(0, LINES - 5);
+	gotoxy(x+2, y+6);
+	printf("다시 메뉴로");
+
+	gotoxy(COLS - 21, LINES - 17);
+	printf("made by [ 건구스 ]");
+
+	screen();
+	emoticon();
+	print_letter_in_box("방향키로 움직인 뒤, 스페이스 바로 난이도를 선택하세요.");
+
+	gotoxy(x, y);
+
+	while (1) {
+		int n = keyControl();
+		switch (n) {
+		case UP: {
+			if (y > LINES / 2 - 7) {
+				gotoxy(x, y);
+				printf(" ");
+				y -= 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case DOWN: {
+			if (y < LINES / 2 - 1) {
+				gotoxy(x, y);
+				printf(" ");
+				y += 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case SUBMIT:
+			return y - (LINES / 2 - 7);
+		}
+	}
 }
 
 void screen() // 대화창 출력하는 함수
@@ -83,65 +152,83 @@ void screen() // 대화창 출력하는 함수
 void emoticon() // 첫 화면 이모티콘
 {
 	ColorSet(10);  // 둠칫 고양이 시작
-	gotoxy(80, 10);
+	gotoxy(84, 10);
 	printf("⊂_＼");
-	gotoxy(80, 11);
+	gotoxy(84, 11);
 	printf("　 ＼＼ Λ＿Λ");
-	gotoxy(80, 12);
-	printf("　　 ＼( ‘ㅅ') 두둠칫");
-	gotoxy(80, 13);
+	gotoxy(84, 12);
+	printf("　　 ＼( 'ㅅ' ) 두둠칫");
+	gotoxy(84, 13);
 	printf("　　　 >　⌒＼");
-	gotoxy(80, 14);
-	printf("　　　/ 　 へ＼");
-	gotoxy(80, 15);
+	gotoxy(84, 14);
+	printf("　　　/ ♥ へ＼");
+	gotoxy(84, 15);
 	printf("　　 /　　/　＼＼");
-	gotoxy(80, 16);
+	gotoxy(84, 16);
 	printf("　　 |　ノ　　 ＼_つ");
-	gotoxy(80, 17);
+	gotoxy(84, 17);
 	printf("　　/　/두둠칫");
-	gotoxy(80, 18);
+	gotoxy(84, 18);
 	printf("　 /　/");
-	gotoxy(80, 19);
+	gotoxy(84, 19);
 	printf("　(　(＼");
-	gotoxy(80, 20);
+	gotoxy(84, 20);
 	printf("　| |、 ＼");
-	gotoxy(80, 21);
+	gotoxy(84, 21);
 	printf("　| | ＼ ⌒)");
-	gotoxy(80, 22);
+	gotoxy(84, 22);
 	printf("　| |　　) /");
-	gotoxy(80, 23);
+	gotoxy(84, 23);
 	printf(" ノ )　  L|");
 	ColorSet(7);  // 둠칫 고양이 종료
 
 	ColorSet(10);  // 타자 이모티콘 시작
-	gotoxy(17, 10);
-	printf("\a☆□□□□□□☆");  // 소리난다
-	gotoxy(17, 11);
-	printf("□■■■□■□□");
-	gotoxy(17, 12);
-	printf("□■□□□■□□");
 	gotoxy(17, 13);
-	printf("□■■■□■■□");
+	printf("\a☆□□□□□□☆");  // 소리난다
 	gotoxy(17, 14);
-	printf("□■□□□■□□");
+	printf("□■■■□■□□");
 	gotoxy(17, 15);
-	printf("□■■■□■□□");
+	printf("□■□□□■□□");
 	gotoxy(17, 16);
-	printf("□□□□□□□□");
+	printf("□■■■□■■□");
 	gotoxy(17, 17);
-	printf("□■■■□■□□");
+	printf("□■□□□■□□");
 	gotoxy(17, 18);
-	printf("□□■□□■□□");
+	printf("□■■■□■□□");
 	gotoxy(17, 19);
-	printf("□□■□□■■□");
+	printf("□□□□□□□□");
 	gotoxy(17, 20);
-	printf("□■□■□■□□");
+	printf("□■■■□■□□");
 	gotoxy(17, 21);
-	printf("□■□■□■□□");
+	printf("□□■□□■□□");
 	gotoxy(17, 22);
+	printf("□□■□□■■□");
+	gotoxy(17, 23);
+	printf("□■□■□■□□");
+	gotoxy(17, 24);
+	printf("□■□■□■□□");
+	gotoxy(17, 25);
 	printf("☆□□□□□□☆ game");
 	ColorSet(7);  // 타자 임티 종료
-	
+
+	ColorSet(115);  // 제목 시작
+	gotoxy(17, 2);
+	printf("★□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□★");
+	gotoxy(17, 3);
+	printf("□■■■□□■□■■■□□■□□■■□□■□■■■□■□□■□□□□■□■■■■□■□");
+	gotoxy(17, 4);
+	printf("□□□■■■■□■□□■■■□■□□■□■□□■□□■□□■■■■■■□□□□■□■□");
+	gotoxy(17, 5);
+	printf("□□□■□□■□■■■□□■□■□□■□■□□■□□■■□■□□□□■□□□□■□■□");
+	gotoxy(17, 6);
+	printf("□■□□□□□□□□□□□□□■□□■□■□□■□□■□□■■■■■■□□□■□□■□");
+	gotoxy(17, 7);
+	printf("□■□□□□□□□■■■■■□■□□■□■□■□■□■□□□□□□□□□□■□□□■□");
+	gotoxy(17, 8);
+	printf("□■■■■■■□□□□□□■□□■■□□■□■□■□■□□■■■■■■□■□□□□■□");
+	gotoxy(17, 9);
+	printf("★□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□★");
+	ColorSet(7);  // 제목 출력 종료
 }
 
 void print_star()  // 무지개 별 출력
@@ -179,19 +266,19 @@ void English() // English 출력
 			ColorSet(10);
 		else
 			ColorSet(13);
-		gotoxy(4, LINES / 2 - 3);
+		gotoxy(8, LINES / 2 - 3);
 		printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
-		gotoxy(4, LINES / 2 - 2);
+		gotoxy(8, LINES / 2 - 2);
 		printf("□■■■■■■□■□□□□■□□■■■■□□■□□□□□□■■■■■■□□■■■■■□■□□□□■□");
-		gotoxy(4, LINES / 2 - 1);
+		gotoxy(8, LINES / 2 - 1);
 		printf("□■□□□□□□■■□□□■□■□□□□□□■□□□□□□□□■■□□□■□□□□□□■□□□□■□");
-		gotoxy(4, LINES / 2);
+		gotoxy(8, LINES / 2);
 		printf("□■■■■■■□■□■□□■□■□□■■■□■□□□□□□□□■■□□□□■■■■□□■■■■■■□");
-		gotoxy(4, LINES / 2 + 1);
+		gotoxy(8, LINES / 2 + 1);
 		printf("□■□□□□□□■□□■□■□■□□■■□□■□□□□□□□□■■□□□□□□□□■□■□□□□■□");
-		gotoxy(4, LINES / 2 + 2);
+		gotoxy(8, LINES / 2 + 2);
 		printf("□■■■■■■□■□□□■■□□■■□■□□■■■■■■□■■■■■■□■■■■■□□■□□□□■□");
-		gotoxy(4, LINES / 2 + 3);
+		gotoxy(8, LINES / 2 + 3);
 		printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
 		Sleep(1000);
 	}
