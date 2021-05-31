@@ -9,6 +9,7 @@ int game_run(int level)
 	int heart = 5; //남은 목숨 변수
 	double result; //시간값을 저장하기 위한 변수
 	int nextInput;
+	int combo = 0;
 
 	int b = 0;
 
@@ -56,6 +57,7 @@ int game_run(int level)
 		}
 		if (_kbhit())
 		{
+			ColorSet(7);
 
 			ch = _getch();
 			gotoxy(COLS / 2 - 5 + j, 5);
@@ -103,12 +105,13 @@ int game_run(int level)
 			{
 			case 0:
 				gotoxy(COLS / 2 - 5, 10);
-				printf("맞았습니다!\n");
+				print_letter_in_box("맞았습니다!");
+				combo++;
 				if (event == 1)
 				{
 					if (heart < 5)
 					{
-						printf("체력1획득!\n");
+						printf("\n\t체력1획득!\n");
 						heart = heart + 1;
 					}
 				}
@@ -117,13 +120,17 @@ int game_run(int level)
 				break;
 			case 1:
 				gotoxy(COLS / 2 - 5, 10);
-				printf("틀렸습니다!\n");
+				print_letter_in_box("틀렸습니다!\n");
+				if (combo > 0)
+					combo--;
 				heart = heart - 1;
 				ColorSet(7);
 				break;
 			case -1:
 				gotoxy(COLS / 2 - 5, 10);
-				printf("틀렸습니다!\n");
+				print_letter_in_box("틀렸습니다!\n");
+				if (combo > 0)
+					combo--;
 				heart = heart - 1;
 				ColorSet(7);
 				break;
@@ -152,7 +159,10 @@ int game_run(int level)
 			switch (level)
 			{
 			case 7:
-				printf("'쉬움' 단계를 클리어 하셨습니다!");
+				totalScore = totalScore + (combo * 10);
+				print_letter_in_box("'쉬움' 단계를 클리어 하셨습니다! 콤보 점수 : ");
+				printf("%d 점", combo * 10);
+				Sleep(2000);
 				nextInput = ask_next_level();
 				switch (nextInput) {
 				case 0:
@@ -163,7 +173,10 @@ int game_run(int level)
 				}
 				break;
 			case 5:
-				printf("'보통' 단계를 클리어 하셨습니다!");
+				totalScore = totalScore + (combo * 20);
+				print_letter_in_box("'보통' 단계를 클리어 하셨습니다! 콤보 점수 : ");
+				printf("%d 점", combo * 20);
+				Sleep(2000);
 				nextInput = ask_next_level();
 				switch (nextInput) {
 				case 0:
@@ -174,9 +187,11 @@ int game_run(int level)
 				}
 				break;
 			case 3:
-				printf("'어려움' 단계를 클리어 하셨습니다!");
-				Sleep(1500);
-				printf("메인메뉴로 돌아갑니다.");
+				totalScore = totalScore + (combo * 30);
+				print_letter_in_box("'어려움' 단계를 클리어 하셨습니다! 콤보 점수 : ");
+				printf("%d 점", combo * 30);
+				Sleep(2000);
+				printf("\n\t메인메뉴로 돌아갑니다.");
 				break;
 			}
 			Sleep(2000); //2초 딜레이
@@ -188,19 +203,16 @@ int game_run(int level)
 
 			system("cls"); // 콘솔창 초기화
 			screen();
-			gotoxy(COLS / 2 - 10, LINES / 2);
-			printf("건덕이가 탈출했다!ㅠㅠ\n");
+			print_letter_in_box("건덕이가 탈출했다!ㅠㅠ");
 			Sleep(1000);
 			system("cls"); // 콘솔창 초기화
 			screen();
-			gotoxy(COLS / 2 - 10, LINES / 2);
-			printf("당신의 점수: %d", score);
+			print_letter_in_box("당신의 점수: %d", score);
 			Sleep(1000); //1초 딜레이
 
 			system("cls"); // 콘솔창 초기화
 			screen();
-			gotoxy(COLS / 2 - 10, LINES / 2);
-			printf("게임오버");
+			print_letter_in_box("게임오버");
 			Sleep(1000); //1초 딜레이
 			return 0;
 			break;
