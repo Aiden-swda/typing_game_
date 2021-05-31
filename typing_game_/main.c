@@ -10,6 +10,7 @@ int main()
 	system("title 건덕이를 잡아라!"); //콘솔창 제목
 	srand(time(NULL));
 	read_file();
+	game_run(5);
 	system("pause");
 	system("cls");
 	English();

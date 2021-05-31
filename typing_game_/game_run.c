@@ -22,12 +22,14 @@ int game_run(int level)
 	system("cls"); // 콘솔창 초기화
 	screen();
 	//srand(time(NULL));
-	gotoxy(110, 0);
+	gotoxy(110, 3);
 	printf("■■■■■\n"); //체력바 테스트
 
 	srand(time(0));
-	gotoxy(5, 5);
-	printf("%d", score);
+	gotoxy(23, 9);
+	printf("단계 점수 : %d", score);
+	gotoxy(23, 10);
+	printf("     콤보 : %d", combo);
 	s_time = time(0);
 	a = get_random_word(&wordLength);
 	
@@ -47,9 +49,12 @@ int game_run(int level)
 			screen();
 			heart = heart - 1;
 			life_bar(heart);
-
-			gotoxy(5, 5);
-			printf("%d", score);
+			if (combo > 0)
+				combo--;
+			gotoxy(23, 9);
+			printf("단계 점수 : %d", score);
+			gotoxy(23, 10);
+			printf("     콤보 : %d", combo);
 			a = get_random_word(&wordLength);
 			event_word(a, heart);
 			s_time = time(0);
@@ -59,7 +64,7 @@ int game_run(int level)
 		{
 			ColorSet(7);
 			ch = _getch();
-			gotoxy(COLS / 2 - 5 + j, 5);
+			gotoxy(COLS / 2 - 5 + j, 12);
 
 			//Backspace 처리
 			if (ch == 8)
@@ -103,7 +108,7 @@ int game_run(int level)
 			switch (check)  // 문자열 비교값에 따른 출력
 			{
 			case 0:
-				gotoxy(COLS / 2 - 5, 10);
+				//gotoxy(COLS / 2 - 5, 10);
 				print_letter_in_box("맞았습니다!");
 				combo++;
 				if (event == 1)
@@ -118,7 +123,7 @@ int game_run(int level)
 				ColorSet(7);
 				break;
 			case 1:
-				gotoxy(COLS / 2 - 5, 10);
+				//gotoxy(COLS / 2 - 5, 10);
 				print_letter_in_box("틀렸습니다!\n");
 				if (combo > 0)
 					combo--;
@@ -126,7 +131,7 @@ int game_run(int level)
 				ColorSet(7);
 				break;
 			case -1:
-				gotoxy(COLS / 2 - 5, 10);
+				//gotoxy(COLS / 2 - 5, 10);
 				print_letter_in_box("틀렸습니다!\n");
 				if (combo > 0)
 					combo--;
@@ -139,8 +144,10 @@ int game_run(int level)
 			screen();
 			life_bar(heart);
 
-			gotoxy(5, 5);
-			printf("%d", score);
+			gotoxy(23, 9);
+			printf("단계 점수 : %d", score);
+			gotoxy(23, 10);
+			printf("     콤보 : %d", combo);
 			a = get_random_word(&wordLength);
 			event_word(a, heart);
 			s_time = time(0);
@@ -153,7 +160,7 @@ int game_run(int level)
 			screen();
 			totalScore = totalScore + score; // 총 점수 관리
 
-			gotoxy(COLS / 2 - 10, LINES / 2);
+			//gotoxy(COLS / 2 - 10, LINES / 2);
 			//레벨에 따른 출력 조절
 			switch (level)
 			{
