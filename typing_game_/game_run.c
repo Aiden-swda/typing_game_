@@ -159,6 +159,7 @@ int game_run(int level)
 			{
 			case 7:
 				totalScore = totalScore + (combo * 10);
+				ColorSet(7);
 				print_letter_in_box("'쉬움' 단계를 클리어 하셨습니다! 콤보 점수 : ");
 				printf("%d 점", combo * 10);
 				Sleep(2000);
@@ -173,6 +174,7 @@ int game_run(int level)
 				break;
 			case 5:
 				totalScore = totalScore + (combo * 20);
+				ColorSet(7);
 				print_letter_in_box("'보통' 단계를 클리어 하셨습니다! 콤보 점수 : ");
 				printf("%d 점", combo * 20);
 				Sleep(2000);
@@ -187,6 +189,7 @@ int game_run(int level)
 				break;
 			case 3:
 				totalScore = totalScore + (combo * 30);
+				ColorSet(7);
 				print_letter_in_box("'어려움' 단계를 클리어 하셨습니다! 콤보 점수 : ");
 				printf("%d 점", combo * 30);
 				Sleep(2000);
