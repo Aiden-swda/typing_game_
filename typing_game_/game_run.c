@@ -64,9 +64,7 @@ int game_run(int level)
 				if (j > 0)
 				{
 					j--;
-					gotoxy(COLS / 2 - 5 + j, 5);
-					printf(" ");
-					printf("\b");
+					printf("\b \b");
 				}
 			}
 
