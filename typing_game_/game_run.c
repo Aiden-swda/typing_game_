@@ -41,10 +41,11 @@ int game_run(int level)
 
 		if (time(0) == s_time + level) //시간 확인
 		{
+			ColorSet(7);
 			system("cls");
 			screen();
 			heart = heart - 1;
-			//life_bar(heart);
+			life_bar(heart);
 
 			gotoxy(5, 5);
 			printf("%d", score);
@@ -118,11 +119,13 @@ int game_run(int level)
 				gotoxy(COLS / 2 - 5, 10);
 				printf("틀렸습니다!\n");
 				heart = heart - 1;
+				ColorSet(7);
 				break;
 			case -1:
 				gotoxy(COLS / 2 - 5, 10);
 				printf("틀렸습니다!\n");
 				heart = heart - 1;
+				ColorSet(7);
 				break;
 			}
 			Sleep(1000);

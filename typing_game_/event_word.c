@@ -12,6 +12,7 @@ void event_word(int a ,int heart)
 		event = 1;
 	}
 	else {
+		ColorSet(7);
 		gotoxy(COLS / 2 - 5, 3);
 		printf("%s\n", wordBase[a]);
 		event = 0;
