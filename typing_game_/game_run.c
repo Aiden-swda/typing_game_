@@ -130,14 +130,30 @@ int game_run(int level)
 		if (score >= 50) // 점수에 따른 동작
 		{
 			system("cls"); // 콘솔창 초기화
+			totalScore = totalScore + score; // 총 점수 관리
+
 			gotoxy(COLS / 2 - 10, LINES / 2);
-			printf("1단계를 클리어 하셨습니다!");
+			//레벨에 따른 출력 조절
+			switch (level)
+			{
+			case 7:
+				printf("'쉬움' 단계를 클리어 하셨습니다!\n");
+				break;
+			case 5:
+				printf("'보통' 단계를 클리어 하셨습니다!");
+				break;
+			case 3:
+				printf("'어려움' 단계를 클리어 하셨습니다!");
+				break;
+			}
 			Sleep(2000); //2초 딜레이
 			return 1;
 			break;
 		}
 		else if (heart == 0) //목숨이 0이 되었을때의 동작
 		{
+			totalScore = totalScore + score; //총 점수 관리
+
 			system("cls"); // 콘솔창 초기화
 			gotoxy(COLS / 2 - 10, LINES / 2);
 			printf("건덕이가 탈출했다!ㅠㅠ\n");

@@ -47,8 +47,10 @@ int main()
 			break;
 		case 4:
 			screen();
-			print_letter_in_box(" ÃÑ Á¡¼ö : ");
-			printf("%d \n", totalScore);
+			gotoxy(2, LINES - 14);
+			texts("ÃÑ Á¡¼ö : ");
+			printf("%d", totalScore);
+			Sleep(2000);
 			break;
 		case 6:
 			return 0;
