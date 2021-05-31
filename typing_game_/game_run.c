@@ -101,17 +101,60 @@ int game_run(int level)
 			{
 			case 0:
 				gotoxy(COLS / 2 - 5, 10);
+				switch (rand() % 4)  // 맞았을 때 출력되는 텍스트
+				{
+				case 0:
+					printf("맞았습니다!");
+					break;
+				case 1:
+					printf("잘 하고 있어요!");
+					break;
+				case 2:
+					printf("좋은 실력이네요!");
+					break;
+				case 3:
+					printf("놀라워요!");
+					break;
+				}
 				printf("맞았습니다!\n");
 				score = score + 10;
 				break;
 			case 1:
 				gotoxy(COLS / 2 - 5, 10);
-				printf("틀렸습니다!\n");
+				switch (rand() % 4)  // 틀렸을 때 출력되는 텍스트
+				{
+				case 0:
+					printf("아쉽네요...");
+					break;
+				case 1:
+					printf("조금만 더 잘해봅시다.");
+					break;
+				case 2:
+					printf("침착하게!");
+					break;
+				case 3:
+					printf("어렵긴 하죠 ㅎㅎ");
+					break;
+				}
 				heart = heart - 1;
 				break;
 			case -1:
 				gotoxy(COLS / 2 - 5, 10);
-				printf("틀렸습니다!\n");
+				switch (rand() % 4)  // 틀렸을 때 출력되는 텍스트
+				{
+				case 0:
+					printf("아쉽네요...");
+					break;
+				case 1:
+					printf("조금만 더 잘해봅시다.");
+					break;
+				case 2:
+					printf("침착하게!");
+					break;
+				case 3:
+					printf("어렵긴 하죠 ㅎㅎ");
+					break;
+				}
 				heart = heart - 1;
 				break;
 			}
@@ -119,7 +162,7 @@ int game_run(int level)
 
 
 			gotoxy(5, 5);
-			printf("%d", score);
+			printf("현재 점수: %d", score);  // 현재 점수 출력
 			a = get_random_word(&wordLength);
 			gotoxy(COLS / 2 - 5, 3);
 			printf("%s\n", wordBase[a]);
@@ -132,7 +175,7 @@ int game_run(int level)
 			system("cls"); // 콘솔창 초기화
 			gotoxy(COLS / 2 - 10, LINES / 2);
 			printf("1단계를 클리어 하셨습니다!");
-			Sleep(2000); //2초 딜레이
+			Sleep(3000); // 3초 딜레이
 			return 1;
 			break;
 		}
@@ -141,16 +184,15 @@ int game_run(int level)
 			system("cls"); // 콘솔창 초기화
 			gotoxy(COLS / 2 - 10, LINES / 2);
 			printf("건덕이가 탈출했다!ㅠㅠ\n");
-			Sleep(1000);
+			Sleep(1500);
 			system("cls"); // 콘솔창 초기화
 			gotoxy(COLS / 2 - 10, LINES / 2);
 			printf("당신의 점수: %d", score);
-			Sleep(1000); //1초 딜레이
+			Sleep(1500); // 1.5초 딜레이
 
 			system("cls"); // 콘솔창 초기화
-			gotoxy(COLS / 2 - 10, LINES / 2);
-			printf("게임오버");
-			Sleep(1000); //1초 딜레이
+			print_gameover();
+			Sleep(3500); // 3.5초 딜레이
 			return 0;
 			break;
 		}

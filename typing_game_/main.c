@@ -12,7 +12,8 @@ int main()
 	
 	system("pause");
 	system("cls");
-	English();
+	catchmeifyoucan();  // 처음 큰 그림 나오는거
+	Sleep(3000);        // 그림 나오는 3초
 	while (1) {
 		system("cls");
 		//intro

@@ -7,14 +7,7 @@ int first_menu()  //첫 화면 출력하는 함수
 	int x = COLS / 2 - 8;
 	int y = LINES / 2 - 7;
 
-	//print_star();
-	ColorSet(7);
-	gotoxy(COLS / 2 - 12, LINES / 2 - 13);
-	printf("=====================");
-	gotoxy(COLS / 2- 13, LINES / 2 - 12);
-	printf("│    건덕이 잡기v1   │");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 11);
-	printf("=====================");
+	print_star();
 	ColorSet(7);
 	gotoxy(x, y);
 	printf("> 게임 시작");
@@ -71,11 +64,11 @@ int second_menu()  // 선택 화면 출력하는 함수
 	system("cls");
 	print_star();
 	ColorSet(7);
-	gotoxy(COLS / 2 - 12, LINES / 2 - 13);
+	gotoxy(COLS / 2 - 12, LINES / 2 - 12);
 	printf("=====================");
-	gotoxy(COLS / 2 - 13, LINES / 2 - 12);
+	gotoxy(COLS / 2 - 13, LINES / 2 - 11);
 	printf("│     난이도 선택    │");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 11);
+	gotoxy(COLS / 2 - 12, LINES / 2 - 10);
 	printf("=====================");
 	gotoxy(x, y);
 	printf("> ");
@@ -257,33 +250,126 @@ void print_star()  // 무지개 별 출력
 	}
 
 }
-void English() // English 출력
+void catchmeifyoucan() // 첫 화면 출력
 {
-	int i;
-	for (i = 0; i < 4; i++)
-	{
-		if (i == 0 || i == 2)
-			ColorSet(10);
-		else
-			ColorSet(13);
-		gotoxy(8, LINES / 2 - 3);
-		printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
-		gotoxy(8, LINES / 2 - 2);
-		printf("□■■■■■■□■□□□□■□□■■■■□□■□□□□□□■■■■■■□□■■■■■□■□□□□■□");
-		gotoxy(8, LINES / 2 - 1);
-		printf("□■□□□□□□■■□□□■□■□□□□□□■□□□□□□□□■■□□□■□□□□□□■□□□□■□");
-		gotoxy(8, LINES / 2);
-		printf("□■■■■■■□■□■□□■□■□□■■■□■□□□□□□□□■■□□□□■■■■□□■■■■■■□");
-		gotoxy(8, LINES / 2 + 1);
-		printf("□■□□□□□□■□□■□■□■□□■■□□■□□□□□□□□■■□□□□□□□□■□■□□□□■□");
-		gotoxy(8, LINES / 2 + 2);
-		printf("□■■■■■■□■□□□■■□□■■□■□□■■■■■■□■■■■■■□■■■■■□□■□□□□■□");
-		gotoxy(8, LINES / 2 + 3);
-		printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
-		Sleep(1000);
-	}
-
-	system("cls");
+	gotoxy(0, 8);
+	printf("                                                     @@          @@\n");
+	printf("                                                  (@@              @@)\n");
+	printf("                     @@)               @@          @:    (:@@:)    :@          @@               (@@\n");
+	printf("                    @                 :#            @@@@@@0@@0@@@@@@            #:                 @\n");
+	printf("                   (##@@#:      (#@#<--(@@@@      _-@@            @@-_      @@@@)-->#@#)     :#@@##)\n");
+	printf("                        (@@@@@@@@@         @@@@@@@                    @@@@@@@         @@@@@@@@@)\n\n");
+	//
+	printf("                       #####    #   #######   #   ####  ####  ####  #   ######  #    ########  #      \n");
+	printf("                           #    #   #         #   #   ##    ##   #  #       #   #          #   #          \n");
+	printf("                          # #####   #    ######    # #        # #   #     ##    ###       #    #         \n");
+	printf("                         #      #   #         #     #   #  #   #    #    #  #   #        #     #       \n");
+	printf("                        #       #   #######   #     #          #    #   #    #  #       #      #        \n");
+	printf("                          #                          #        #     #     #     #      #       #      \n");
+	printf("                          #           #########       ##    ##      #     #######     #        #            \n");
+	printf("                          #######             #         ####        #     #######    #         #            \n\n");
+	//
+	printf("            @@)                             * C A T C H M E I F Y O U C A N *                      (@@\n");
+	printf("           @     @@         @@@)                                                        (@@@         @@     @\n");
+	printf("          @    _@  @       @          @@@@@@    _____@@#<<(==)>>#@@_____    @@@@@@          @       @  @_    @\n");
+	printf("          (#@@#@       @@@@:@@@@@@@@@@  || @@@@@  | @ << (-==-) >> @ |  @@@@@ ||  @@@@@@@@@@:@@@@       @#@@#)\n");
+	printf("               @@@@@@@@              @@@@@   |  @@@@ --<< (==) >>-- @@@@  |   @@@@@              @@@@@@@@\n");
+	printf("                                      @   @###@@@  @@@@_        _@@@@  @@@###@   @\n");
+	printf("                                                       @-  ()  -@\n");
+	printf("                                                        @------@\n");
+	printf("                                                         @@__@@\n");
+}
+void print_gameover()
+{
+	ColorSet(12);  // gameover 문구 출력 시작
+	gotoxy(3, 5);
+	printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
+	gotoxy(3, 6);
+	printf("□□■■■■□□□□■■□□□■□□□□■□■■■■■■□□■■■■□□■□□□□■□■■■■■■□■■■■■□□");
+	gotoxy(3, 7);
+	printf("□■□□□□□□□■□□■□□■■□□■■□■□□□□□□■□□□□■□■□□□□■□■□□□□□□■□□□□■□");
+	gotoxy(3, 8);
+	printf("□■□□■■■□□■■■■□□■□■■□■□■■■■■■□■□□□□■□■□□□□■□■■■■■■□■■■■■□□");
+	gotoxy(3, 9);
+	printf("□■□□■■□□■□□□□■□■□□□□■□■□□□□□□■□□□□■□□■□□■□□■□□□□□□■□□□□■□");
+	gotoxy(3, 10);
+	printf("□□■■□■□□■□□□□■□■□□□□■□■■■■■■□□■■■■□□□□■■□□□■■■■■■□■□□□□■□");
+	gotoxy(3, 11);
+	printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
+	ColorSet(10);  // gameover 문구 출력 끝
+	gotoxy(COLS / 2 - 20, LINES / 2 - 4);  // 우는 소 출력 시작
+	printf("□□□□□□□□□□□□□□□□□□□□□");
+	gotoxy(COLS / 2 - 20, LINES / 2 - 3);
+	printf("□□□□■□□□□□□□□□□□■□□□□");
+	gotoxy(COLS / 2 - 20, LINES / 2 - 2);
+	printf("□□□■□■□□■■■■■□□■□■□□□");
+	gotoxy(COLS / 2 - 20, LINES / 2 - 1);
+	printf("□□□■□□■■□□□□□■■□□■□□□");
+	gotoxy(COLS / 2 - 20, LINES / 2);
+	printf("□■■□□□□□□□□□□□□□□□■■□");
+	gotoxy(COLS / 2 - 20, LINES / 2 + 1);
+	printf("■□□□□■□□■□□□■□□■□□□□■");
+	gotoxy(COLS / 2 - 20, LINES / 2 + 2);
+	printf("□■■□□□■■□□□□□■■□□□■■□");
+	gotoxy(COLS / 2 - 20, LINES / 2 + 3);
+	printf("□□■□□■□□■□□□■□□■□□■□□");
+	gotoxy(COLS / 2 - 20, LINES / 2 + 4);
+	printf("□□■□□□□□□□□□□□□□□□■□□");
+	gotoxy(COLS / 2 - 20, LINES / 2 + 5);
+	printf("□□□■□□□□■□□□■□□□□■□□□");
+	gotoxy(COLS / 2 - 20, LINES / 2 + 6);
+	printf("□□□□■■□□□□□□□□□■■□□□□");
+	gotoxy(COLS / 2 - 20, LINES / 2 + 7);
+	printf("□□□□□□■■■■■■■■■□□□□□□");
+	gotoxy(COLS / 2 - 20, LINES / 2 + 8);
+	printf("□□□□□□□□□□□□□□□□□□□□□");  // 우는 소 출력 끝
 	ColorSet(7);
-	gotoxy(0,0);
+}
+void print_full()
+{
+	printf("  ♡          @@@@@           ♡          ");
+	printf("           @@       @@                    ");
+	printf("          @   @@@@    @                 ");
+	printf("         @   @ /＼ @   @           ");
+	printf("         @         @@@@@@@@@@@@@          ");
+	printf("          @       @             @   ");
+	printf("           @       @@@@@@@@@@@@@       ");
+	printf("           @      @                   ");
+	printf("          @       @                  ");
+	printf("         @         @                  ");
+	printf("        @           @                ");
+	printf("       @             @              ");
+	printf("      @               @             ");
+}
+void print_injured()
+{
+	printf("              @@@@@                ");
+	printf("           @@       @@               ");
+	printf("          @   @@@@    @          ");
+	printf("         @   @ ● @   @                ");
+	printf("         @         @@@@@@@@@@@@@       ");
+	printf("          @       @             @    ");
+	printf("           @       @@@@@@@@@@@@@        ");
+	printf("           @      @               ");
+	printf("          @       @               ");
+	printf("         @         @              ");
+	printf("        @           @               ");
+	printf("       @             @              ");
+	printf("      @               @             ");
+}
+void print_almost_die()
+{
+	printf("   @  @       @@@@@          @   @       ");
+	printf("@          @@       @@    @         @     ");
+	printf("    @     @   @@@@    @               @    ");
+	printf("  @      @   @ xx  @   @               @   ");
+	printf("         @         @@@@@@@@@@@@@       ");
+	printf("          @       @             @     ");
+	printf("           @       @@@@@@@@@@@@@       ");
+	printf("           @      @                 ");
+	printf("          @       @             ");
+	printf("         @         @                         ");
+	printf("        @           @                   ");
+	printf("       @             @               ");
+	printf("      @               @                ");
 }

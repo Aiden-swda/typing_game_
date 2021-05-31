@@ -59,7 +59,11 @@ void print_help() // 도움말 출력
 	ColorSet(7);
 	printf("가 되어 자동으로 다음 난이도로 이동합니다. 행운을 빕니다!");
 	gotoxy(29, 25);
-	printf("[ 메인화면으로 돌아가려면 아무 숫자나 입력하세요 ]");
-	int n;
-	scanf("%d", &n);
+	printf("[ 메인화면으로 돌아가려면 스페이스바를 누르세요 ]");
+	while (1) // 스페이스바 누르면 종료
+	{
+		char n = _getch();
+		if (n == SPACE_BAR)
+			break;
+	}
 }

@@ -19,7 +19,7 @@ void texts(char text[]) // 텍스트 출력시간 설정
 	for (int i = 0; i < strlen(text); i++)
 	{
 		printf("%c", text[i]);
-		Sleep(50);
+		Sleep(15);
 	}
 }
 

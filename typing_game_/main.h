@@ -36,7 +36,8 @@ void screen();
 int second_menu();
 void emoticon();
 void print_star();
-void English();
+void catchmeifyoucan();
+void print_gameover();
 
 //game_run.c
 int game_run();
@@ -64,6 +65,7 @@ void life_bar(int heart);
 #define UP 0
 #define DOWN 1
 #define SUBMIT 2
+#define SPACE_BAR 32
 
 //전역 변수(배열) 선언
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 
