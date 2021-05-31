@@ -2,60 +2,131 @@
 
 #include "main.h"
 
-void first()  //첫 화면 출력하는 함수
+int first_menu()  //첫 화면 출력하는 함수
 {
+	int x = COLS / 2 - 8;
+	int y = LINES / 2 - 7;
+
 	//print_star();
 	ColorSet(7);
-	gotoxy(COLS / 2 - 9, LINES / 2 - 6);
-	printf("  ");
-	ColorSet(121);
-	printf("<건덕이 잡기>");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 13);
+	printf("=====================");
+	gotoxy(COLS / 2- 13, LINES / 2 - 12);
+	printf("│    건덕이 잡기v1   │");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 11);
+	printf("=====================");
 	ColorSet(7);
-	gotoxy(COLS / 2 - 9, LINES / 2 - 5);
-	printf("made by ");
-	ColorSet(121);
-	printf("[건구스]");
+	gotoxy(x, y);
+	printf("> 게임 시작");
+	gotoxy(x, y+2);
+	printf("  도움말");
+	gotoxy(x, y+4);
+	printf("  점수 보기");
+	gotoxy(x, y+6);
+	printf("  게임종료");
 	ColorSet(7);
-	gotoxy(COLS / 2 - 9, LINES / 2 - 3);
-	printf("1. 게임 시작");
-	gotoxy(COLS / 2 - 9, LINES / 2 - 2);
-	printf("2. 도움말(첫판 필수)");
-	gotoxy(COLS / 2 - 9, LINES / 2 - 1);
-	printf("3. 점수 보기");
-	gotoxy(COLS / 2 - 9, LINES / 2);
-	printf("4. 게임종료\n");
+	gotoxy(COLS - 21, LINES - 17);
+	printf("made by [ 건구스 ]");
+
+	screen();
+	emoticon();
+	print_letter_in_box("방향키로 움직인 뒤, 스페이스 바로 메뉴를 선택하세요");
+
+	gotoxy(x, y);
+
+	while (1) {
+		int n = keyControl();
+		switch (n) {
+		case UP: {
+			if (y > LINES / 2 - 7) {
+				gotoxy(x, y);
+				printf(" ");
+				y -= 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case DOWN: {
+			if (y < LINES / 2 - 1) {
+				gotoxy(x, y);
+				printf(" ");
+				y += 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case SUBMIT:
+			return y - (LINES / 2 - 7);
+		}
+	}
 }
 
-void show_level_select()  // 선택 화면 출력하는 함수
+int second_menu()  // 선택 화면 출력하는 함수
 {
+	int x = COLS / 2 - 8;
+	int y = LINES / 2 - 7;
+
 	system("cls");
 	print_star();
-	gotoxy(COLS / 2 - 12, LINES / 2 - 6);
-	printf("  ");
-	ColorSet(11);
-	printf("<난이도 선택>");
 	ColorSet(7);
-	gotoxy(COLS / 2 - 12, LINES / 2 - 3);
-	printf("1. ");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 13);
+	printf("=====================");
+	gotoxy(COLS / 2 - 13, LINES / 2 - 12);
+	printf("│     난이도 선택    │");
+	gotoxy(COLS / 2 - 12, LINES / 2 - 11);
+	printf("=====================");
+	gotoxy(x, y);
+	printf("> ");
 	ColorSet(14);
 	printf("쉬움");
-	ColorSet(7);
-	printf(" (시간 제한 7초)");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 2);
-	printf("2. ");
+	gotoxy(x+2, y+2);
 	ColorSet(12);
 	printf("보통");
-	ColorSet(7);
-	printf(" (시간 제한 5초");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 1);
-	printf("3. ");
+	gotoxy(x+2, y+4);
 	ColorSet(192);
 	printf("어려움");
 	ColorSet(7);
-	printf(" (시간 제한 3초)");
-	gotoxy(COLS / 2 - 12, LINES / 2);
-	printf("4. 다시 메뉴로\n");
-	gotoxy(0, LINES - 5);
+	gotoxy(x+2, y+6);
+	printf("다시 메뉴로");
+
+	gotoxy(COLS - 21, LINES - 17);
+	printf("made by [ 건구스 ]");
+
+	screen();
+	emoticon();
+	print_letter_in_box("방향키로 움직인 뒤, 스페이스 바로 난이도를 선택하세요.");
+
+	gotoxy(x, y);
+
+	while (1) {
+		int n = keyControl();
+		switch (n) {
+		case UP: {
+			if (y > LINES / 2 - 7) {
+				gotoxy(x, y);
+				printf(" ");
+				y -= 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case DOWN: {
+			if (y < LINES / 2 - 1) {
+				gotoxy(x, y);
+				printf(" ");
+				y += 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case SUBMIT:
+			return y - (LINES / 2 - 7);
+		}
+	}
 }
 
 void screen() // 대화창 출력하는 함수
@@ -195,19 +266,19 @@ void English() // English 출력
 			ColorSet(10);
 		else
 			ColorSet(13);
-		gotoxy(4, LINES / 2 - 3);
+		gotoxy(8, LINES / 2 - 3);
 		printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
-		gotoxy(4, LINES / 2 - 2);
+		gotoxy(8, LINES / 2 - 2);
 		printf("□■■■■■■□■□□□□■□□■■■■□□■□□□□□□■■■■■■□□■■■■■□■□□□□■□");
-		gotoxy(4, LINES / 2 - 1);
+		gotoxy(8, LINES / 2 - 1);
 		printf("□■□□□□□□■■□□□■□■□□□□□□■□□□□□□□□■■□□□■□□□□□□■□□□□■□");
-		gotoxy(4, LINES / 2);
+		gotoxy(8, LINES / 2);
 		printf("□■■■■■■□■□■□□■□■□□■■■□■□□□□□□□□■■□□□□■■■■□□■■■■■■□");
-		gotoxy(4, LINES / 2 + 1);
+		gotoxy(8, LINES / 2 + 1);
 		printf("□■□□□□□□■□□■□■□■□□■■□□■□□□□□□□□■■□□□□□□□□■□■□□□□■□");
-		gotoxy(4, LINES / 2 + 2);
+		gotoxy(8, LINES / 2 + 2);
 		printf("□■■■■■■□■□□□■■□□■■□■□□■■■■■■□■■■■■■□■■■■■□□■□□□□■□");
-		gotoxy(4, LINES / 2 + 3);
+		gotoxy(8, LINES / 2 + 3);
 		printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
 		Sleep(1000);
 	}
