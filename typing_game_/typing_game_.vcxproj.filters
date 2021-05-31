@@ -30,12 +30,6 @@
     <ClCompile Include="life_bar.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="choice_level.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ask_quit.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="internal_function.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
