@@ -28,8 +28,8 @@ int game_run(int level)
 	printf("%d", score);
 	s_time = time(0);
 	a = get_random_word(&wordLength);
-	gotoxy(COLS / 2 - 5, 3);
-	printf("%s\n", wordBase[a]);
+	
+	event_word(a, heart);
 
 	
 	while (1)
@@ -42,13 +42,12 @@ int game_run(int level)
 		{
 			system("cls");
 			heart = heart - 1;
-			life_bar(heart);
+			//life_bar(heart);
 
 			gotoxy(5, 5);
 			printf("%d", score);
 			a = get_random_word(&wordLength);
-			gotoxy(COLS / 2 - 5, 3);
-			printf("%s\n", wordBase[a]);
+			event_word(a, heart);
 			s_time = time(0);
 			j = 0;
 		}
@@ -97,13 +96,22 @@ int game_run(int level)
 			check = strcmp(input, wordBase[a]); //문자열 비교
 			//printf("%d", check);
 			b = 0;
-			system("cls");
+			
 			switch (check)  // 문자열 비교값에 따른 출력
 			{
 			case 0:
 				gotoxy(COLS / 2 - 5, 10);
 				printf("맞았습니다!\n");
+				if (event == 1)
+				{
+					if (heart < 5)
+					{
+						printf("체력1획득!\n");
+						heart = heart + 1;
+					}
+				}
 				score = score + 10;
+				ColorSet(7);
 				break;
 			case 1:
 				gotoxy(COLS / 2 - 5, 10);
@@ -116,14 +124,16 @@ int game_run(int level)
 				heart = heart - 1;
 				break;
 			}
+
+			Sleep(1000);
+			system("cls");
 			life_bar(heart);
 
 
 			gotoxy(5, 5);
 			printf("%d", score);
 			a = get_random_word(&wordLength);
-			gotoxy(COLS / 2 - 5, 3);
-			printf("%s\n", wordBase[a]);
+			event_word(a, heart);
 			s_time = time(0);
 			j = 0;
 		}
