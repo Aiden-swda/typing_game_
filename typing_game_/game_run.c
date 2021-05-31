@@ -24,13 +24,14 @@ int game_run(int level)
 	printf("■■■■■\n"); //체력바 테스트
 
 	srand(time(0));
+	gotoxy(5, 5);
+	printf("%d", score);
 	s_time = time(0);
 	a = get_random_word(&wordLength);
-	printf("%d", wordLength);
 	gotoxy(COLS / 2 - 5, 3);
 	printf("%s\n", wordBase[a]);
 
-
+	
 	while (1)
 	{
 		//a = get_random_word(); //배열에서 단어 추출하기 위한 랜덤 인덱스 값
@@ -65,7 +66,7 @@ int game_run(int level)
 					j--;
 					gotoxy(COLS / 2 - 5 + j, 5);
 					printf(" ");
-					gotoxy(COLS / 2 - 5 + j, 5);
+					printf("\b");
 				}
 			}
 
