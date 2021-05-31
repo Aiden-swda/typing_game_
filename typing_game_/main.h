@@ -10,7 +10,6 @@
 #include <string.h> 
 #include <conio.h>
 
-
 //함수 선언(파일별 구분)
 //main.c
 int main();
@@ -28,7 +27,7 @@ int get_random_word(int* wordLength);
 void screen_s(int* story_y);
 void print_letter_in_box(char* s);
 int keyControl();
-
+int ask_next_level();
 
 //screen_print.c
 int first_menu();
@@ -41,19 +40,13 @@ void print_gameover();
 
 //game_run.c
 int game_run();
-double get_input_check(int *score, int *check);
 
-//void check_answer(int check, int *score, int *heart);
 //life_bar.c
 void life_bar(int heart); 
+
 //event_word.c
-
+void event_word(int a, int heart);
 //combo.c
-
-//choice_level.c
-
-//ask_quit.c
-
 
 //기호상수 선언
 #define COLS 120
@@ -71,5 +64,5 @@ void life_bar(int heart);
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 
 int arrayNum; //랜덤 뽑은 배열의 행
 int totalScore; //총 점수
-
+int event; //이벤트 판별 변수
 

@@ -7,9 +7,9 @@ int main()
 
 	//settings
 	system("mode con cols=120 lines=45");
+	system("title 건덕이를 잡아라!"); //콘솔창 제목
 	srand(time(NULL));
 	read_file();
-	
 	system("pause");
 	system("cls");
 	catchmeifyoucan();  // 처음 큰 그림 나오는거
@@ -48,10 +48,13 @@ int main()
 			break;
 		case 4:
 			screen();
-			print_letter_in_box(" 총 점수 : ");
-			printf("%d \n", totalScore);
+			gotoxy(2, LINES - 14);
+			texts("총 점수 : ");
+			printf("%d 점", totalScore);
+			Sleep(2000);
 			break;
 		case 6:
+			print_letter_in_box("게임을 종료합니다.");
 			return 0;
 		}
 	}

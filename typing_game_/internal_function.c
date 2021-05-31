@@ -82,3 +82,52 @@ void print_letter_in_box(char* s)
 	Sleep(500);
 	screen_s(&story_y);  // screen_s함수로 story_y값 전달 후 조건에 따라 story_y값 변경
 }
+
+int ask_next_level()
+{
+	int x = COLS / 2 - 8;
+	int y = LINES / 2 - 7;
+
+	system("cls");
+	gotoxy(COLS / 2 - 13, LINES / 2 - 10);
+	printf(" 다음 레벨로 진행하시겠습니까? ");
+
+	gotoxy(x, y);
+	printf("> ");
+	ColorSet(14);
+	printf("네. 진행하겠습니다.");
+	gotoxy(x + 2, y + 2);
+	ColorSet(12);
+	printf("아니요. 종료하겠습니다.");
+	ColorSet(7);
+	screen();
+	print_letter_in_box("방향키로 움직인 뒤, 스페이스 바로 메뉴를 선택하세요.");
+
+	while (1) {
+		int n = keyControl();
+		switch (n) {
+		case UP: {
+			if (y > LINES / 2 - 7) {
+				gotoxy(x, y);
+				printf(" ");
+				y -= 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case DOWN: {
+			if (y < LINES / 2 - 5) {
+				gotoxy(x, y);
+				printf(" ");
+				y += 2;
+				gotoxy(x, y);
+				printf(">");
+			}
+			break;
+		}
+		case SUBMIT:
+			return y - (LINES / 2 - 7);
+		}
+	}
+}
