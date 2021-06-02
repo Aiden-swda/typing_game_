@@ -201,6 +201,7 @@ int game_run(int level)
 				printf("%d 점", combo * 30);
 				Sleep(2000);
 				printf("\n\t메인메뉴로 돌아갑니다.");
+				Sleep(2000);
 				break;
 			}
 			//Sleep(2000); //2초 딜레이
@@ -212,16 +213,18 @@ int game_run(int level)
 			ColorSet(7);
 
 			system("cls"); // 콘솔창 초기화
-			main_screen();
+			//main_screen();
 			print_letter_in_box2("건덕이가 탈출했다!ㅠㅠ");
 			Sleep(1000);
 			system("cls"); // 콘솔창 초기화
-			main_screen();
-			print_letter_in_box2("당신의 점수: %d", score);
+			//main_screen();
+			print_letter_in_box2("당신의 점수: ");
+			//Sleep(15);
+			printf("%d", score);
 			Sleep(1000); //1초 딜레이
 
 			system("cls"); // 콘솔창 초기화
-			main_screen();
+			//main_screen();
 			print_letter_in_box2("게임오버");
 			Sleep(1000); //1초 딜레이
 			return 0;
