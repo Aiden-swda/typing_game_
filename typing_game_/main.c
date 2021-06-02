@@ -12,6 +12,7 @@ int main()
 	read_file();
 	system("pause");
 	system("cls");
+	CursorView(0);
 	catchmeifyoucan();  // 처음 큰 그림 나오는거
 	Sleep(3000);        // 그림 나오는 3초
 	while (1) {
@@ -43,7 +44,7 @@ int main()
 			//도움말 보기
 			system("cls");
 			screen();
-			print_letter_in_box(" < 도움말 보기 >");
+			print_letter_in_box1(" < 도움말 보기 >");
 			print_help();
 			break;
 		case 4:
@@ -54,7 +55,7 @@ int main()
 			Sleep(2000);
 			break;
 		case 6:
-			print_letter_in_box("게임을 종료합니다.");
+			print_letter_in_box1("게임을 종료합니다.");
 			return 0;
 		}
 	}

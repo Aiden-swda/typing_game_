@@ -24,10 +24,14 @@ void ColorSet(int color_number);
 void texts(char text[]);
 void read_file();
 int get_random_word(int* wordLength);
-void screen_s(int* story_y);
-void print_letter_in_box(char* s);
+void screen_s1(int* story_y);
+void screen_s2(int* story_y);
+void print_letter_in_box1(char* s);
+void print_letter_in_box2(char* s);
+void print_letter_in_box3(char* s);
 int keyControl();
 int ask_next_level();
+void CursorView(char show);
 
 //screen_print.c
 int first_menu();
@@ -37,6 +41,8 @@ void emoticon();
 void print_star();
 void catchmeifyoucan();
 void print_gameover();
+void main_screen();
+void print_full();
 
 //game_run.c
 int game_run();

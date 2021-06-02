@@ -20,15 +20,15 @@ int game_run(int level)
 
 	//system("mode con cols=120 lines=45"); //콘솔창 크기
 	system("cls"); // 콘솔창 초기화
-	screen();
+	main_screen();
 	//srand(time(NULL));
-	gotoxy(110, 3);
-	printf("■■■■■\n"); //체력바 테스트
+	gotoxy(96, 4);
+	printf("■■■■■"); //체력바 테스트
 
 	srand(time(0));
-	gotoxy(23, 9);
+	gotoxy(10, 4);
 	printf("단계 점수 : %d", score);
-	gotoxy(23, 10);
+	gotoxy(10, 5);
 	printf("     콤보 : %d", combo);
 	s_time = time(0);
 	a = get_random_word(&wordLength);
@@ -46,14 +46,14 @@ int game_run(int level)
 		{
 			ColorSet(7);
 			system("cls");
-			screen();
+			main_screen();
 			heart = heart - 1;
 			life_bar(heart);
 			if (combo > 0)
 				combo--;
-			gotoxy(23, 9);
+			gotoxy(10, 4);
 			printf("단계 점수 : %d", score);
-			gotoxy(23, 10);
+			gotoxy(10, 5);
 			printf("     콤보 : %d", combo);
 			a = get_random_word(&wordLength);
 			event_word(a, heart);
@@ -64,7 +64,7 @@ int game_run(int level)
 		{
 			ColorSet(7);
 			ch = _getch();
-			gotoxy(COLS / 2 - 5 + j, 12);
+			gotoxy(COLS / 2 - 5 + j, 28);
 
 			//Backspace 처리
 			if (ch == 8)
@@ -109,7 +109,7 @@ int game_run(int level)
 			{
 			case 0:
 				//gotoxy(COLS / 2 - 5, 10);
-				print_letter_in_box("맞았습니다!");
+				print_letter_in_box2("맞았습니다!");
 				combo++;
 				if (event == 1)
 				{
@@ -124,7 +124,7 @@ int game_run(int level)
 				break;
 			case 1:
 				//gotoxy(COLS / 2 - 5, 10);
-				print_letter_in_box("틀렸습니다!\n");
+				print_letter_in_box2("틀렸습니다!\n");
 				if (combo > 0)
 					combo--;
 				heart = heart - 1;
@@ -132,7 +132,7 @@ int game_run(int level)
 				break;
 			case -1:
 				//gotoxy(COLS / 2 - 5, 10);
-				print_letter_in_box("틀렸습니다!\n");
+				print_letter_in_box2("틀렸습니다!\n");
 				if (combo > 0)
 					combo--;
 				heart = heart - 1;
@@ -141,12 +141,12 @@ int game_run(int level)
 			}
 			Sleep(1000);
 			system("cls");
-			screen();
+			main_screen();
 			life_bar(heart);
 
-			gotoxy(23, 9);
+			gotoxy(10, 4);
 			printf("단계 점수 : %d", score);
-			gotoxy(23, 10);
+			gotoxy(10, 5);
 			printf("     콤보 : %d", combo);
 			a = get_random_word(&wordLength);
 			event_word(a, heart);
@@ -157,7 +157,7 @@ int game_run(int level)
 		if (score >= 50) // 점수에 따른 동작
 		{
 			system("cls"); // 콘솔창 초기화
-			screen();
+			main_screen();
 			totalScore = totalScore + score; // 총 점수 관리
 
 			//gotoxy(COLS / 2 - 10, LINES / 2);
@@ -167,7 +167,7 @@ int game_run(int level)
 			case 7:
 				totalScore = totalScore + (combo * 10);
 				ColorSet(7);
-				print_letter_in_box("'쉬움' 단계를 클리어 하셨습니다! 콤보 점수 : ");
+				print_letter_in_box2("'쉬움' 단계를 클리어 하셨습니다! 콤보 점수 : ");
 				printf("%d 점", combo * 10);
 				Sleep(2000);
 				nextInput = ask_next_level();
@@ -182,7 +182,7 @@ int game_run(int level)
 			case 5:
 				totalScore = totalScore + (combo * 20);
 				ColorSet(7);
-				print_letter_in_box("'보통' 단계를 클리어 하셨습니다! 콤보 점수 : ");
+				print_letter_in_box2("'보통' 단계를 클리어 하셨습니다! 콤보 점수 : ");
 				printf("%d 점", combo * 20);
 				Sleep(2000);
 				nextInput = ask_next_level();
@@ -197,7 +197,7 @@ int game_run(int level)
 			case 3:
 				totalScore = totalScore + (combo * 30);
 				ColorSet(7);
-				print_letter_in_box("'어려움' 단계를 클리어 하셨습니다! 콤보 점수 : ");
+				print_letter_in_box2("'어려움' 단계를 클리어 하셨습니다! 콤보 점수 : ");
 				printf("%d 점", combo * 30);
 				Sleep(2000);
 				printf("\n\t메인메뉴로 돌아갑니다.");
@@ -212,17 +212,17 @@ int game_run(int level)
 			ColorSet(7);
 
 			system("cls"); // 콘솔창 초기화
-			screen();
-			print_letter_in_box("건덕이가 탈출했다!ㅠㅠ");
+			main_screen();
+			print_letter_in_box2("건덕이가 탈출했다!ㅠㅠ");
 			Sleep(1000);
 			system("cls"); // 콘솔창 초기화
-			screen();
-			print_letter_in_box("당신의 점수: %d", score);
+			main_screen();
+			print_letter_in_box2("당신의 점수: %d", score);
 			Sleep(1000); //1초 딜레이
 
 			system("cls"); // 콘솔창 초기화
-			screen();
-			print_letter_in_box("게임오버");
+			main_screen();
+			print_letter_in_box2("게임오버");
 			Sleep(1000); //1초 딜레이
 			return 0;
 			break;

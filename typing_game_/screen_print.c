@@ -23,7 +23,7 @@ int first_menu()  //첫 화면 출력하는 함수
 
 	screen();
 	emoticon();
-	print_letter_in_box("방향키로 움직인 뒤, 스페이스 바로 메뉴를 선택하세요");
+	print_letter_in_box1("방향키로 움직인 뒤, 스페이스 바로 메뉴를 선택하세요");
 
 	gotoxy(x, y);
 
@@ -63,13 +63,6 @@ int second_menu()  // 선택 화면 출력하는 함수
 
 	system("cls");
 	print_star();
-	ColorSet(7);
-	gotoxy(COLS / 2 - 12, LINES / 2 - 12);
-	printf("=====================");
-	gotoxy(COLS / 2 - 13, LINES / 2 - 11);
-	printf("│     난이도 선택    │");
-	gotoxy(COLS / 2 - 12, LINES / 2 - 10);
-	printf("=====================");
 	gotoxy(x, y);
 	printf("> ");
 	ColorSet(14);
@@ -89,7 +82,7 @@ int second_menu()  // 선택 화면 출력하는 함수
 
 	screen();
 	emoticon();
-	print_letter_in_box("방향키로 움직인 뒤, 스페이스 바로 난이도를 선택하세요.");
+	print_letter_in_box1("방향키로 움직인 뒤, 스페이스 바로 난이도를 선택하세요.");
 
 	gotoxy(x, y);
 
@@ -122,6 +115,164 @@ int second_menu()  // 선택 화면 출력하는 함수
 	}
 }
 
+void main_screen() // 메인 인터페이스 출력
+{
+	int i, j, x, y;
+
+	x = 6;
+	y = 3;
+	gotoxy(x, y);
+	printf("┌");
+	for (i = 0; i < 18; i++) printf("─");
+	printf("┐");
+
+	gotoxy(x + 2, y);
+	printf("<SCORE>");
+
+	for (j = 0; j < 2; j++) {
+		gotoxy(x, y + 1 + j);
+		printf("│");
+		for (i = 0; i < 18; i++) printf(" ");
+		printf("│");
+	}
+
+	gotoxy(x, y + 1 + j);
+	printf("└");
+	for (i = 0; i < 18; i++) printf("─");
+	printf("┘");
+
+	// score창 출력
+
+	x = 90;
+	y = 3;
+	gotoxy(x, y);
+	printf("┌");
+	for (i = 0; i < 18; i++) printf("─");
+	printf("┐");
+
+	gotoxy(x+2, y);
+	printf("<HP>");
+
+	for (j = 0; j < 1; j++) {
+		gotoxy(x, y + 1 + j);
+		printf("│");
+		for (i = 0; i < 18; i++) printf(" ");
+		printf("│");
+	}
+
+	gotoxy(x, y + 1 + j);
+	printf("└");
+	for (i = 0; i < 18; i++) printf("─");
+	printf("┘");
+
+	// HP창 출력
+
+	x = 30;
+	y = 7;
+
+	gotoxy(x, y);
+	printf("┌");
+	for (i = 0; i < 53; i++) printf("─");
+	printf("┐");
+
+	for (j = 0; j < 18; j++) {
+		gotoxy(x, y + 1 + j);
+		printf("│");
+		for (i = 0; i < 53; i++) printf(" ");
+		printf("│");
+	}
+
+	gotoxy(x, y + 1 + j);
+	printf("└");
+	for (i = 0; i < 53; i++) printf("─");
+	printf("┘");
+
+	// 건덕이창 출력
+
+		// 체력창 출력
+
+	x = 30;
+	y = 30;
+
+	gotoxy(x+18, y-1);
+	for (i = 0; i < 20; i++) printf("─");
+
+	gotoxy(x, y);
+	printf("┌");
+	for (i = 0; i < 53; i++) printf("─");
+	printf("┐");
+
+	for (j = 0; j < 8; j++) {
+		gotoxy(x, y + 1 + j);
+		printf("│");
+		for (i = 0; i < 53; i++) printf(" ");
+		printf("│");
+	}
+
+	gotoxy(x, y + 1 + j);
+	printf("└");
+	for (i = 0; i < 53; i++) printf("─");
+	printf("┘");
+
+	// 게임 플레이 대사창 출력
+
+	x = 90;
+	y = 13;
+
+	gotoxy(x, y);
+	printf("┌");
+	for (i = 0; i < 20; i++) printf("─");
+	printf("┐");
+
+	for (j = 0; j < 10; j++) {
+		gotoxy(x, y + 1 + j);
+		printf("│");
+		for (i = 0; i < 20; i++) printf(" ");
+		printf("│");
+	}
+
+	gotoxy(x, y + 1 + j);
+	printf("└");
+	for (i = 0; i < 20; i++) printf("─");
+	printf("┘");
+
+	// 특수 대사창 출력
+
+		print_full();
+	
+	// 건덕이 출력 (if문으로 heart에따라 다르게 출력하고싶음)
+
+	x = 47;
+	y = 8;
+
+	gotoxy(x, y);
+	printf("┌");
+	for (i = 0; i < 18; i++) printf("─");
+	printf("┐");
+
+	for (j = 0; j < 1; j++) {
+		gotoxy(x, y + 1 + j);
+		printf("│");
+		for (i = 0; i < 18; i++) printf(" ");
+		printf("│");
+	}
+
+	gotoxy(x, y + 1 + j);
+	printf("└─────────────── O ┘");
+
+	gotoxy(x + 19, y + 2 + j);
+	printf("0");
+
+	gotoxy(x + 18, y + 3 + j);
+	printf("o");
+
+	gotoxy(x + 17, y + 4 + j);
+	printf("o");
+
+	// 말풍선 출력
+
+}
+
 void screen() // 대화창 출력하는 함수
 {
 	int i, j;
@@ -145,33 +296,33 @@ void screen() // 대화창 출력하는 함수
 void emoticon() // 첫 화면 이모티콘
 {
 	ColorSet(10);  // 둠칫 고양이 시작
-	gotoxy(84, 10);
-	printf("⊂_＼");
-	gotoxy(84, 11);
-	printf("　 ＼＼ Λ＿Λ");
 	gotoxy(84, 12);
-	printf("　　 ＼( 'ㅅ' ) 두둠칫");
+	printf("⊂_＼");
 	gotoxy(84, 13);
-	printf("　　　 >　⌒＼");
+	printf("　 ＼＼ Λ＿Λ");
 	gotoxy(84, 14);
-	printf("　　　/ ♥ へ＼");
+	printf("　　 ＼( 'ㅅ' ) 두둠칫");
 	gotoxy(84, 15);
-	printf("　　 /　　/　＼＼");
+	printf("　　　 >　⌒＼");
 	gotoxy(84, 16);
-	printf("　　 |　ノ　　 ＼_つ");
+	printf("　　　/ ♥ へ＼");
 	gotoxy(84, 17);
-	printf("　　/　/두둠칫");
+	printf("　　 /　　/　＼＼");
 	gotoxy(84, 18);
-	printf("　 /　/");
+	printf("　　 |　ノ　　 ＼_つ");
 	gotoxy(84, 19);
-	printf("　(　(＼");
+	printf("　　/　/두둠칫");
 	gotoxy(84, 20);
-	printf("　| |、 ＼");
+	printf("　 /　/");
 	gotoxy(84, 21);
-	printf("　| | ＼ ⌒)");
+	printf("　(　(＼");
 	gotoxy(84, 22);
-	printf("　| |　　) /");
+	printf("　| |、 ＼");
 	gotoxy(84, 23);
+	printf("　| | ＼ ⌒)");
+	gotoxy(84, 24);
+	printf("　| |　　) /");
+	gotoxy(84, 25);
 	printf(" ノ )　  L|");
 	ColorSet(7);  // 둠칫 고양이 종료
 
@@ -327,49 +478,97 @@ void print_gameover()
 }
 void print_full()
 {
+	int x = 41;
+	int y = 13;
+
+	gotoxy(x, y);
 	printf("  ♡          @@@@@           ♡          ");
+	gotoxy(x, y + 1);
 	printf("           @@       @@                    ");
+	gotoxy(x, y + 2);
 	printf("          @   @@@@    @                 ");
+	gotoxy(x, y + 3);
 	printf("         @   @ /＼ @   @           ");
+	gotoxy(x, y + 4);
 	printf("         @         @@@@@@@@@@@@@          ");
+	gotoxy(x, y + 5);
 	printf("          @       @             @   ");
+	gotoxy(x, y + 6);
 	printf("           @       @@@@@@@@@@@@@       ");
+	gotoxy(x, y + 7);
 	printf("           @      @                   ");
+	gotoxy(x, y + 8);
 	printf("          @       @                  ");
+	gotoxy(x, y + 9);
 	printf("         @         @                  ");
+	gotoxy(x, y + 10);
 	printf("        @           @                ");
+	gotoxy(x, y + 11);
 	printf("       @             @              ");
+	gotoxy(x, y + 12);
 	printf("      @               @             ");
 }
 void print_injured()
 {
+	int x = 41;
+	int y = 13;
+
+	gotoxy(x, y);
 	printf("              @@@@@                ");
+	gotoxy(x, y+1);
 	printf("           @@       @@               ");
+	gotoxy(x, y+2);
 	printf("          @   @@@@    @          ");
-	printf("         @   @ ● @   @                ");
+	gotoxy(x, y+3);
+	printf("         @   @ ㅠ @   @                ");
+	gotoxy(x, y+4);
 	printf("         @         @@@@@@@@@@@@@       ");
+	gotoxy(x, y+5);
 	printf("          @       @             @    ");
+	gotoxy(x, y+6);
 	printf("           @       @@@@@@@@@@@@@        ");
+	gotoxy(x, y+7);
 	printf("           @      @               ");
+	gotoxy(x, y+8);
 	printf("          @       @               ");
+	gotoxy(x, y+9);
 	printf("         @         @              ");
+	gotoxy(x, y+10);
 	printf("        @           @               ");
+	gotoxy(x, y+11);
 	printf("       @             @              ");
+	gotoxy(x, y+12);
 	printf("      @               @             ");
 }
 void print_almost_die()
 {
+	int x = 41;
+	int y = 13;
+
+	gotoxy(x, y);
 	printf("   @  @       @@@@@          @   @       ");
+	gotoxy(x, y);
 	printf("@          @@       @@    @         @     ");
+	gotoxy(x, y);
 	printf("    @     @   @@@@    @               @    ");
+	gotoxy(x, y);
 	printf("  @      @   @ xx  @   @               @   ");
+	gotoxy(x, y);
 	printf("         @         @@@@@@@@@@@@@       ");
+	gotoxy(x, y);
 	printf("          @       @             @     ");
+	gotoxy(x, y);
 	printf("           @       @@@@@@@@@@@@@       ");
+	gotoxy(x, y);
 	printf("           @      @                 ");
+	gotoxy(x, y);
 	printf("          @       @             ");
+	gotoxy(x, y);
 	printf("         @         @                         ");
+	gotoxy(x, y);
 	printf("        @           @                   ");
+	gotoxy(x, y);
 	printf("       @             @               ");
+	gotoxy(x, y);
 	printf("      @               @                ");
 }

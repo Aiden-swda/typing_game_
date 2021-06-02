@@ -23,6 +23,19 @@ void texts(char text[]) // 텍스트 출력시간 설정
 	}
 }
 
+void CursorView(char show) // 커서숨기기
+{
+	HANDLE hConsole;
+	CONSOLE_CURSOR_INFO ConsoleCursor;
+
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	ConsoleCursor.bVisible = show;
+	ConsoleCursor.dwSize = 1;
+
+	SetConsoleCursorInfo(hConsole, &ConsoleCursor);
+}
+
 void read_file() //파일 읽기
 {
 	int i, j = 0;
@@ -46,11 +59,23 @@ int get_random_word(int *wordLength) //단어 랜덤으로 꺼내기
 	return arrayNum;
 }
 
-void screen_s(int* story_y) // 대화창 꽉차면 비우는 함수
+void screen_s1(int* story_y) // 대화창 꽉차면 비우는 함수
 {
 	if (*story_y == (LINES - 4)) {
 		system("cls");
 		screen();
+		*story_y = LINES - 14;
+	}
+	else {
+		*story_y += 2;
+	}
+}
+
+void screen_s2(int* story_y) // 대화창 꽉차면 비우는 함수
+{
+	if (*story_y == (LINES - 4)) {
+		system("cls");
+		main_screen();
 		*story_y = LINES - 14;
 	}
 	else {
@@ -72,7 +97,7 @@ int keyControl() {
 	}
 }
 
-void print_letter_in_box(char* s)
+void print_letter_in_box1(char* s)
 {
 	int story_x = 2;
 	int story_y = LINES - 14;
@@ -80,7 +105,27 @@ void print_letter_in_box(char* s)
 	gotoxy(story_x, story_y);
 	texts(s); // texts함수로 텍스트 출력 천천히하기
 	Sleep(500);
-	screen_s(&story_y);  // screen_s함수로 story_y값 전달 후 조건에 따라 story_y값 변경
+	screen_s1(&story_y);  // screen_s함수로 story_y값 전달 후 조건에 따라 story_y값 변경
+}
+
+void print_letter_in_box2(char* s)
+{
+	int story_x = 32;
+	int story_y = 31;
+	main_screen();
+	gotoxy(story_x, story_y);
+	texts(s); // texts함수로 텍스트 출력 천천히하기
+	Sleep(500);
+}
+
+void print_letter_in_box3(char* s)
+{
+	int story_x = 92;
+	int story_y = 14;
+	main_screen();
+	gotoxy(story_x, story_y);
+	texts(s); // texts함수로 텍스트 출력 천천히하기
+	Sleep(500);
 }
 
 int ask_next_level()
@@ -101,7 +146,7 @@ int ask_next_level()
 	printf("아니요. 종료하겠습니다.");
 	ColorSet(7);
 	screen();
-	print_letter_in_box("방향키로 움직인 뒤, 스페이스 바로 메뉴를 선택하세요.");
+	print_letter_in_box1("방향키로 움직인 뒤, 스페이스 바로 메뉴를 선택하세요.");
 
 	while (1) {
 		int n = keyControl();

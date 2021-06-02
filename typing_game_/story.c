@@ -14,7 +14,7 @@ void story()
 	char story1[] = "[system : 게임이 시작됩니다.]";  // 배열로 출력할 텍스트 선언
 	texts(story1); // texts함수로 텍스트 출력 천천히하기
 	Sleep(1000);
-	screen_s(&story_y);  // screen_s함수로 story_y값 전달 후 조건에 따라 story_y값 변경
+	screen_s1(&story_y);  // screen_s함수로 story_y값 전달 후 조건에 따라 story_y값 변경
 
 	return 0;
 }
