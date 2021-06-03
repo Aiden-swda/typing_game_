@@ -43,6 +43,9 @@ void catchmeifyoucan();
 void print_gameover();
 void main_screen();
 void print_full();
+void print_injured();
+void print_almost_die();
+void ending_credit();
 
 //game_run.c
 int game_run();
@@ -65,6 +68,7 @@ void event_word(int a, int heart);
 #define DOWN 1
 #define SUBMIT 2
 #define SPACE_BAR 32
+#define CREDIT 200
 
 //전역 변수(배열) 선언
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 

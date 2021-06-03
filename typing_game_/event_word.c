@@ -6,7 +6,7 @@ void event_word(int a ,int heart)
 	int percent = rand() % 100;
 	if (percent < 20) //20ÆÛ¼¾Æ®
 	{
-		ColorSet(1);
+		ColorSet(11);
 		gotoxy(COLS / 2 - 5, 9);
 		printf("%s\n", wordBase[a]);
 		event = 1;
