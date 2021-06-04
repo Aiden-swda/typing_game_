@@ -13,8 +13,8 @@ int main()
 	system("pause");
 	system("cls");
 	CursorView(0);
-	catchmeifyoucan();  // 처음 큰 그림 나오는거
-	Sleep(1000);        // 그림 나오는 1초
+	/*catchmeifyoucan();  // 처음 큰 그림 나오는거
+	Sleep(1000);        // 그림 나오는 1초*/
 	while (1) {
 		system("cls");
 		//intro
@@ -27,12 +27,15 @@ int main()
 			switch (levelInput)
 			{
 			case 0:
+				start_game();
 				game_run(7);
 				continue;
 			case 2:
+				start_game();
 				game_run(5);
 				continue;
 			case 4:
+				start_game();
 				game_run(3);
 				continue;
 			case 6:

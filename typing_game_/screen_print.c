@@ -58,7 +58,7 @@ int first_menu()  //첫 화면 출력하는 함수
 
 int second_menu()  // 선택 화면 출력하는 함수
 {
-	int x = COLS / 2 - 8;
+	int x = COLS / 2 - 6;
 	int y = LINES / 2 - 7;
 
 	system("cls");
@@ -66,13 +66,13 @@ int second_menu()  // 선택 화면 출력하는 함수
 	gotoxy(x, y);
 	printf("> ");
 	ColorSet(14);
-	printf("쉬움");
+	printf("초급");
 	gotoxy(x+2, y+2);
 	ColorSet(12);
-	printf("보통");
+	printf("중급");
 	gotoxy(x+2, y+4);
 	ColorSet(192);
-	printf("어려움");
+	printf("고급");
 	ColorSet(7);
 	gotoxy(x+2, y+6);
 	printf("다시 메뉴로");
@@ -132,7 +132,7 @@ void main_screen() // 메인 인터페이스 출력
 	for (j = 0; j < 3; j++) {
 		gotoxy(x, y + 1 + j);
 		printf("│");
-		for (i = 0; i < 18; i++) printf(" ");
+		gotoxy(x + 19, y + 1 + j);
 		printf("│");
 	}
 
@@ -156,7 +156,7 @@ void main_screen() // 메인 인터페이스 출력
 	for (j = 0; j < 1; j++) {
 		gotoxy(x, y + 1 + j);
 		printf("│");
-		for (i = 0; i < 18; i++) printf(" ");
+		gotoxy(x + 19, y + 1 + j);
 		printf("│");
 	}
 
@@ -178,7 +178,7 @@ void main_screen() // 메인 인터페이스 출력
 	for (j = 0; j < 18; j++) {
 		gotoxy(x, y + 1 + j);
 		printf("│");
-		for (i = 0; i < 53; i++) printf(" ");
+		gotoxy(x+54, y + 1 + j);
 		printf("│");
 	}
 
@@ -188,8 +188,6 @@ void main_screen() // 메인 인터페이스 출력
 	printf("┘");
 
 	// 건덕이창 출력
-
-		// 체력창 출력
 
 	x = 30;
 	y = 30;
@@ -221,20 +219,49 @@ void main_screen() // 메인 인터페이스 출력
 
 	gotoxy(x, y);
 	printf("┌");
-	for (i = 0; i < 20; i++) printf("─");
+	for (i = 0; i < 23; i++) printf("─");
 	printf("┐");
 
-	for (j = 0; j < 10; j++) {
+	for (j = 0; j < 8; j++) {
 		gotoxy(x, y + 1 + j);
 		printf("│");
-		for (i = 0; i < 20; i++) printf(" ");
+		gotoxy(x+24, y + 1 + j);
 		printf("│");
 	}
 
 	gotoxy(x, y + 1 + j);
 	printf("└");
-	for (i = 0; i < 20; i++) printf("─");
+	for (i = 0; i < 23; i++) printf("─");
 	printf("┘");
+
+	gotoxy(x + 10, y + 1);
+	printf("<TMI>");
+
+	srand(time(0));
+	int letter = rand() % 4;
+	switch (letter)
+	{
+	case 0:
+		tmi(letter , 1);
+		tmi(letter+4, 2);
+		tmi(letter + 8, 3);
+		break;
+	case 1:
+		tmi(letter, 1);
+		tmi(letter + 4, 2);
+		tmi(letter + 8, 3);
+		break;
+	case 2:
+		tmi(letter, 1);
+		tmi(letter + 4, 2);
+		tmi(letter + 8, 3);
+		break;
+	case 3:
+		tmi(letter, 1);
+		tmi(letter + 4, 2);
+		tmi(letter + 8, 3);
+		break;
+	}
 
 	// 특수 대사창 출력
 
@@ -271,6 +298,41 @@ void main_screen() // 메인 인터페이스 출력
 
 	// 말풍선 출력
 
+	gotoxy(37, 37);
+	printf("말풍선에 나오는 단어를 정확히 입력하세요!");
+}
+
+void start_game() {
+
+	system("cls");
+	main_screen();
+
+	gotoxy(96, 4);
+	ColorSet(12);
+	printf("■■■■■");
+
+	ColorSet(7);
+
+	print_full();
+
+	gotoxy(32, 37);
+	printf("                                              ");
+	gotoxy(40, 37);
+	printf("[계속하려면 스페이스 바를 누르시오]");
+
+	for (int i = 0; i < 8; i++) {
+		story(i);
+		char ch = _getch();
+		if (ch == 32) {
+			main_screen();
+			gotoxy(32, 37);
+			printf("                                              ");
+			gotoxy(40, 37);
+			printf("[계속하려면 스페이스 바를 누르시오]");
+		}
+	}
+	gotoxy(32, 37);
+	printf("                                              ");
 }
 
 void screen() // 대화창 출력하는 함수
@@ -353,26 +415,15 @@ void emoticon() // 첫 화면 이모티콘
 	printf("□■□■□■□□");
 	gotoxy(17, 25);
 	printf("☆□□□□□□☆ game");
-	ColorSet(7);  // 타자 임티 종료
+    // 타자 임티 종료
 
-	ColorSet(115);  // 제목 시작
-	gotoxy(17, 2);
-	printf("★□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□★");
-	gotoxy(17, 3);
-	printf("□■■■□□■□■■■□□■□□■■□□■□■■■□■□□■□□□□■□■■■■□■□");
-	gotoxy(17, 4);
-	printf("□□□■■■■□■□□■■■□■□□■□■□□■□□■□□■■■■■■□□□□■□■□");
-	gotoxy(17, 5);
-	printf("□□□■□□■□■■■□□■□■□□■□■□□■□□■■□■□□□□■□□□□■□■□");
-	gotoxy(17, 6);
-	printf("□■□□□□□□□□□□□□□■□□■□■□□■□□■□□■■■■■■□□□■□□■□");
-	gotoxy(17, 7);
-	printf("□■□□□□□□□■■■■■□■□□■□■□■□■□■□□□□□□□□□□■□□□■□");
-	gotoxy(17, 8);
-	printf("□■■■■■■□□□□□□■□□■■□□■□■□■□■□□■■■■■■□■□□□□■□");
-	gotoxy(17, 9);
-	printf("★□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□★");
-	ColorSet(7);  // 제목 출력 종료
+	ColorSet(7);
+	gotoxy(47, 9);
+	printf("=======================");
+	gotoxy(51, 10);
+	printf("<건덕이 잡기v1>");
+	gotoxy(47,11);
+	printf("=======================");
 }
 
 void print_star()  // 무지개 별 출력

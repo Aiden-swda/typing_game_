@@ -15,8 +15,9 @@
 int main();
 
 //story.c
-void story();
+void story(int i);
 void print_help();
+void tmi(int i, int r);
 
 //internal_functions.c
 void gotoxy(int x, int y);
@@ -24,11 +25,8 @@ void ColorSet(int color_number);
 void texts(char text[]);
 void read_file();
 int get_random_word(int* wordLength);
-void screen_s1(int* story_y);
-void screen_s2(int* story_y);
 void print_letter_in_box1(char* s);
 void print_letter_in_box2(char* s);
-void print_letter_in_box3(char* s);
 int keyControl();
 int ask_next_level();
 void CursorView(char show);
@@ -46,6 +44,7 @@ void print_full();
 void print_injured();
 void print_almost_die();
 void ending_credit();
+void start_game();
 
 //game_run.c
 int game_run();

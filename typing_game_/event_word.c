@@ -7,13 +7,14 @@ void event_word(int a ,int heart)
 	if (percent < 20) //20ÆÛ¼¾Æ®
 	{
 		ColorSet(11);
-		gotoxy(COLS / 2 - 5, 9);
+		gotoxy(COLS / 2 - 6, 9);
 		printf("%s\n", wordBase[a]);
 		event = 1;
+		ColorSet(7);
 	}
 	else {
 		ColorSet(7);
-		gotoxy(COLS / 2 - 5, 9);
+		gotoxy(COLS / 2 - 6, 9);
 		printf("%s\n", wordBase[a]);
 		event = 0;
 	}
