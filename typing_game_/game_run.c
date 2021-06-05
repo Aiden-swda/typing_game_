@@ -213,7 +213,7 @@ int game_run(int level)
 			s_time = time(0);
 			j = 0;
 		}
-		if (score >= 10&&play_count==1) // 점수에 따른 동작
+		if (score >= 50&&play_count==8) // 점수에 따른 동작
 		{
 			system("cls"); // 콘솔창 초기화
 			main_screen();

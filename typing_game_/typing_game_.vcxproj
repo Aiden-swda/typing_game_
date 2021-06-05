@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="combo.c" />
     <ClCompile Include="event_word.c" />
     <ClCompile Include="game_run.c" />
     <ClCompile Include="screen_print.c" />

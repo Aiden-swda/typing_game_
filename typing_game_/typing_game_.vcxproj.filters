@@ -21,9 +21,6 @@
     <ClCompile Include="story.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="combo.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="event_word.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
