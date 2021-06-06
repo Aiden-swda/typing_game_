@@ -7,7 +7,7 @@ void story(int i)
 
 {
 	gotoxy(32, 31);
-	printf("                                                  ");
+	printf("                                                   ");
 
 	gotoxy(32, 31);
 	char story[][100] = { 
