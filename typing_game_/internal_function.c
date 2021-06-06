@@ -75,10 +75,10 @@ int get_random_word(int *wordLength, int L) //´Ü¾î ·£´ýÀ¸·Î ²¨³»±â
 		arrayNum = rand() % EASY;
 		break;
 	case 5:
-		arrayNum = rand() % NORMAL+EASY;
+		arrayNum = (rand() % NORMAL)+EASY;
 		break;
 	case 3:
-		arrayNum = rand() % HARD + NORMAL + EASY;
+		arrayNum = (rand() % HARD) + NORMAL + EASY;
 		break;
 	}
 	//arrayNum = rand() % WORDNUM; 
