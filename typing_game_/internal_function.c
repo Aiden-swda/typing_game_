@@ -66,10 +66,22 @@ void read_file() //파일 읽기
 	fclose(fp);
 }
 
-int get_random_word(int *wordLength) //단어 랜덤으로 꺼내기
+int get_random_word(int *wordLength, int L) //단어 랜덤으로 꺼내기
 {
 	//랜덤으로 단어 꺼내기
-	arrayNum = rand() % WORDNUM; 
+	switch (L)
+	{
+	case 7:
+		arrayNum = rand() % EASY;
+		break;
+	case 5:
+		arrayNum = rand() % NORMAL+EASY;
+		break;
+	case 3:
+		arrayNum = rand() % HARD + NORMAL + EASY;
+		break;
+	}
+	//arrayNum = rand() % WORDNUM; 
 	//단어의 길이 파악
 	*wordLength = strlen(wordBase[arrayNum]) - 1;
 	return arrayNum;

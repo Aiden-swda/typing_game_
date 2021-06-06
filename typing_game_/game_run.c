@@ -12,7 +12,7 @@ int game_run(int level)
 	int combo = 0;
 	int letter = 0; //답이 틀리거나 맞을 때 출력될 텍스트를 위한 변수
 	int b = 0;
-	int play_count = 0; // 게임 라운드 횟수 저장 변수
+	int play_count = 1; // 게임 라운드 횟수 저장 변수
 
 	char ch;
 	int s_time, j = 0;
@@ -39,7 +39,7 @@ int game_run(int level)
 	printf("   라운드 : %d", play_count);
 
 	s_time = time(0);
-	a = get_random_word(&wordLength);
+	a = get_random_word(&wordLength,level);
 	
 	event_word(a, heart);
 
@@ -65,7 +65,7 @@ int game_run(int level)
 			printf("     콤보 : %d", combo);
 			gotoxy(10, 6);
 			printf("   라운드 : %d", play_count);
-			a = get_random_word(&wordLength);
+			a = get_random_word(&wordLength,level);
 			event_word(a, heart);
 			s_time = time(0);
 			j = 0;
@@ -208,7 +208,7 @@ int game_run(int level)
 			printf("     콤보 : %d", combo);
 			gotoxy(10, 6);
 			printf("   라운드 : %d", play_count);
-			a = get_random_word(&wordLength);
+			a = get_random_word(&wordLength,level);
 			event_word(a, heart);
 			s_time = time(0);
 			j = 0;
@@ -295,7 +295,7 @@ int game_run(int level)
 			//Sleep(2000); //2초 딜레이
 			break;
 		}
-		else if (heart == 0|| play_count == 10) //목숨이 0이 되었을 때, 라운드 종료시의 점수가 낮았을 때의 동작
+		else if (heart == 0|| play_count == 5) //목숨이 0이 되었을 때, 라운드 종료시의 점수가 낮았을 때의 동작
 		{
 			totalScore = totalScore + score; //총 점수 관리
 			ColorSet(7);

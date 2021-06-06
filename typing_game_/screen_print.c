@@ -744,7 +744,7 @@ void print_almost_die()
 	gotoxy(x, y+2);
 	printf("    @     @   @@@@    @               @    ");
 	gotoxy(x, y+3);
-	printf("  @      @   @ xx  @   @               @   ");
+	printf("  @      @   @ ㅠ  @   @               @   ");
 	gotoxy(x, y+4);
 	printf("         @         @@@@@@@@@@@@@       ");
 	gotoxy(x, y+5);
