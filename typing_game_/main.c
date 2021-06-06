@@ -13,7 +13,7 @@ int main()
 	system("pause");
 	system("cls");
 	CursorView(0);
-	/*catchmeifyoucan();  // 처음 큰 그림 나오는거
+	catchmeifyoucan();  // 처음 큰 그림 나오는거
 	Sleep(1000);        // 그림 나오는 1초*/
 	while (1) {
 		system("cls");
