@@ -45,6 +45,7 @@ void life_bar(int heart) // 목숨값에 따른 체력바
 		gotoxy(96, 4);
 		ColorSet(12);
 		printf("■■■■■");
+		ColorSet(7);
 		print_full();
 		break;
 	}
