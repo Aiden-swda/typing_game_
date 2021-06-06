@@ -127,15 +127,19 @@ int game_run(int level)
 				{
 				case 0:
 					story(19);
+					Sleep(500);
 					break;
 				case 1:
 					story(20);
+					Sleep(500);
 					break;
 				case 2:
 					story(21);
+					Sleep(500);
 					break;
 				case 3:
 					story(22);
+					Sleep(500);
 					break;
 				}
 				combo++;
@@ -159,15 +163,19 @@ int game_run(int level)
 				{
 				case 0:
 					story(11);
+					Sleep(500);
 					break;
 				case 1:
 					story(12);
+					Sleep(500);
 					break;
 				case 2:
 					story(13);
+					Sleep(500);
 					break;
 				case 3:
 					story(14);
+					Sleep(500);
 					break;
 				}
 				if (combo > 0)
@@ -185,15 +193,19 @@ int game_run(int level)
 				{
 				case 0:
 					story(11);
+					Sleep(500);
 					break;
 				case 1:
 					story(12);
+					Sleep(500);
 					break;
 				case 2:
 					story(13);
+					Sleep(500);
 					break;
 				case 3:
 					story(14);
+					Sleep(500);
 					break;
 				}
 				if (combo > 0)
