@@ -11,7 +11,6 @@ void life_bar(int heart) // 목숨값에 따른 체력바
 		printf("□□□□□");
 		ColorSet(7);
 		story(18);
-		Sleep(1000);
 		break;
 	case 1:
 		gotoxy(96, 4);
@@ -26,7 +25,6 @@ void life_bar(int heart) // 목숨값에 따른 체력바
 		ColorSet(12);
 		printf("□□□■■");
 		ColorSet(7);
-		story(15);
 		print_injured();
 		break;
 	case 3:
@@ -34,7 +32,6 @@ void life_bar(int heart) // 목숨값에 따른 체력바
 		ColorSet(12);
 		printf("□□■■■");
 		ColorSet(7);
-		story(15);
 		print_injured();
 		break;
 	case 4:
@@ -42,14 +39,12 @@ void life_bar(int heart) // 목숨값에 따른 체력바
 		ColorSet(12);
 		printf("□■■■■");
 		ColorSet(7);
-		story(15);
 		print_full();
 		break;
 	case 5:
 		gotoxy(96, 4);
 		ColorSet(12);
 		printf("■■■■■");
-		ColorSet(7);
 		print_full();
 		break;
 	}

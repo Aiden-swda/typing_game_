@@ -55,6 +55,8 @@ int game_run(int level)
 			system("cls");
 			main_screen();
 			heart = heart - 1;
+			story(15);
+			Sleep(1000);
 			life_bar(heart);
 			if (combo > 0)
 				combo--;
@@ -142,6 +144,7 @@ int game_run(int level)
 					if (heart < 5)
 					{
 						story(16);
+						Sleep(1000);
 						heart = heart + 1;
 					}
 				}
@@ -171,6 +174,8 @@ int game_run(int level)
 					combo--;
 				heart = heart - 1;
 				ColorSet(7);
+				story(15);
+				Sleep(1000);
 				break;
 			case -1:
 				//gotoxy(COLS / 2 - 5, 10);
@@ -195,6 +200,8 @@ int game_run(int level)
 					combo--;
 				heart = heart - 1;
 				ColorSet(7);
+				story(15);
+				Sleep(1000);
 				break;
 			}
 			Sleep(1000);

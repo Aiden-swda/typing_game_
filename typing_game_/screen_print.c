@@ -66,13 +66,13 @@ int second_menu()  // 선택 화면 출력하는 함수
 	gotoxy(x, y);
 	printf("> ");
 	ColorSet(14);
-	printf("초급");
+	printf("쉬움");
 	gotoxy(x+2, y+2);
 	ColorSet(12);
-	printf("중급");
+	printf("보통");
 	gotoxy(x+2, y+4);
 	ColorSet(192);
-	printf("고급");
+	printf("어려움");
 	ColorSet(7);
 	gotoxy(x+2, y+6);
 	printf("다시 메뉴로");
