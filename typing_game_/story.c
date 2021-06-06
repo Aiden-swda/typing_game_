@@ -10,7 +10,7 @@ void story(int i)
 	printf("                                                   ");
 
 	gotoxy(32, 31);
-	char story[][100] = { 
+	char story[][60] = { 
 	("XXX : 하… 도X코인을 사는게 아니었는데…"), //0
 	("XXX : 시드머니를 벌 만한 곳이 없으려나?"),
 	("NEWS : 건덕이가 또 다시 일감호를 탈출…"),
@@ -53,7 +53,7 @@ void tmi(int i,int r)
 {
 	gotoxy(92, 16 + 2*r);
 	printf("                      ");
-	char tmi[][100] = {
+	char tmi[][60] = {
 		("게임에 사용되는 영단어"),
 		("영어타자연습은 프로그"),
 		("백진률은 건덕이가"),
