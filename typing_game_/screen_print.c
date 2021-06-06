@@ -238,36 +238,12 @@ void main_screen() // 메인 인터페이스 출력
 	printf("<TMI>");
 
 	srand(time(0));
-	int letter = rand() % 4;
-	switch (letter)
-	{
-	case 0:
-		tmi(letter , 1);
-		tmi(letter+4, 2);
-		tmi(letter + 8, 3);
-		break;
-	case 1:
-		tmi(letter, 1);
-		tmi(letter + 4, 2);
-		tmi(letter + 8, 3);
-		break;
-	case 2:
-		tmi(letter, 1);
-		tmi(letter + 4, 2);
-		tmi(letter + 8, 3);
-		break;
-	case 3:
-		tmi(letter, 1);
-		tmi(letter + 4, 2);
-		tmi(letter + 8, 3);
-		break;
+	int letter = rand() % 10;
+	for (int r = 0; r < 3; r++) {
+		tmi(letter, r);
 	}
 
 	// 특수 대사창 출력
-
-	//	print_full();
-	
-	// 건덕이 출력 (if문으로 heart에따라 다르게 출력하고싶음)
 
 	x = 47;
 	y = 8;
@@ -285,16 +261,7 @@ void main_screen() // 메인 인터페이스 출력
 	}
 
 	gotoxy(x, y + 1 + j);
-	printf("└─────────────── O ┘");
-
-	gotoxy(x + 19, y + 2 + j);
-	printf("0");
-
-	gotoxy(x + 18, y + 3 + j);
-	printf("o");
-
-	gotoxy(x + 17, y + 4 + j);
-	printf("o");
+	printf("└──────────────────┘");
 
 	// 말풍선 출력
 
@@ -670,11 +637,18 @@ void print_gameover()
 }
 void print_full()
 {
+
+	gotoxy(66, 11);
+	printf("0");
+
+	gotoxy(65, 12);
+	printf("ㅇ");
+
 	int x = 41;
 	int y = 13;
 
 	gotoxy(x, y);
-	printf("  ♡          @@@@@           ♡          ");
+	printf("  ♡          @@@@@    o      ♡          ");
 	gotoxy(x, y + 1);
 	printf("           @@       @@                    ");
 	gotoxy(x, y + 2);
@@ -756,7 +730,7 @@ void print_almost_die()
 	gotoxy(x, y+8);
 	printf("          @       @             ");
 	gotoxy(x, y+9);
-	printf("         @         @                         ");
+	printf("         @         @                     ");
 	gotoxy(x, y+10);
 	printf("        @           @                   ");
 	gotoxy(x, y+11);

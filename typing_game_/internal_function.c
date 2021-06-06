@@ -91,11 +91,11 @@ int keyControl() {
 
 int ask_next_level()
 {
-	int x = COLS / 2 - 8;
-	int y = LINES / 2 - 7;
+	int x = 45;
+	int y = 15;
 
 	system("cls");
-	gotoxy(COLS / 2 - 13, LINES / 2 - 10);
+	gotoxy(42, 12);
 	printf(" 다음 레벨로 진행하시겠습니까? ");
 
 	gotoxy(x, y);

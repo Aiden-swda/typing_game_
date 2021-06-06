@@ -217,6 +217,8 @@ int game_run(int level)
 		{
 			system("cls"); // 콘솔창 초기화
 			main_screen();
+			gotoxy(37, 37);
+			printf("                                          ");
 			totalScore = totalScore + score; // 총 점수 관리
 
 			//gotoxy(COLS / 2 - 10, LINES / 2);
@@ -228,6 +230,8 @@ int game_run(int level)
 				ColorSet(7);
 				story(31);
 				printf("%d 점", combo * 10);
+				Sleep(1500);
+				story(8);
 				Sleep(1500);
 				story(24);
 				Sleep(1500);
@@ -246,6 +250,8 @@ int game_run(int level)
 				story(32);
 				printf("%d 점", combo * 20);
 				Sleep(1500);
+				story(9);
+				Sleep(1500);
 				story(25);
 				Sleep(2000);
 				nextInput = ask_next_level();
@@ -260,6 +266,8 @@ int game_run(int level)
 			case 3:
 				totalScore = totalScore + (combo * 30);
 				ColorSet(7);
+				story(10);
+				Sleep(1500);
 				story(33);
 				printf("%d 점", combo * 30);
 				Sleep(1500);
@@ -299,20 +307,18 @@ int game_run(int level)
 		{
 			totalScore = totalScore + score; //총 점수 관리
 			ColorSet(7);
+			story(23);
 
 			system("cls"); // 콘솔창 초기화
-			//main_screen();
-			print_letter_in_box2("건덕이가 탈출했다!ㅠㅠ");
+			main_screen();
 			Sleep(1000);
 			system("cls"); // 콘솔창 초기화
-			//main_screen();
+			main_screen();
 			print_letter_in_box2("당신의 점수: ");
-			//Sleep(15);
 			printf("%d", score);
 			Sleep(3000); //1초 딜레이
 
 			system("cls"); // 콘솔창 초기화
-			//main_screen();
 			print_gameover();
 			Sleep(2000); //1초 딜레이
 			return 0;
