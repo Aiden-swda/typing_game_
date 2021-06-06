@@ -232,7 +232,7 @@ int game_run(int level)
 			s_time = time(0);
 			j = 0;
 		}
-		if (score >= 50&&play_count==8) // 점수에 따른 동작
+		if (score >= 50&&play_count==9) // 점수에 따른 동작
 		{
 			system("cls"); // 콘솔창 초기화
 			main_screen();
@@ -322,7 +322,7 @@ int game_run(int level)
 			//Sleep(2000); //2초 딜레이
 			break;
 		}
-		else if (heart == 0|| play_count == 8) //목숨이 0이 되었을 때, 라운드 종료시의 점수가 낮았을 때의 동작
+		else if (heart == 0|| play_count == 9) //목숨이 0이 되었을 때, 라운드 종료시의 점수가 낮았을 때의 동작
 		{
 			totalScore = totalScore + score; //총 점수 관리
 			ColorSet(7);
