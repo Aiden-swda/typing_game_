@@ -28,15 +28,15 @@ int main()
 			{
 			case 0:
 				start_game();
-				game_run(7);
+				game_run(TIMELIMIT_EASY);
 				continue;
 			case 2:
 				start_game();
-				game_run(5);
+				game_run(TIMELIMIT_NORMAL);
 				continue;
 			case 4:
 				start_game();
-				game_run(3);
+				game_run(TIMELIMIT_HARD);
 				continue;
 			case 6:
 				continue;

@@ -12,7 +12,7 @@ int game_run(int level)
 	int combo = 0;
 	int letter = 0; //답이 틀리거나 맞을 때 출력될 텍스트를 위한 변수
 	int b = 0;
-	int play_count = 0; // 게임 라운드 횟수 저장 변수
+	int play_count = 1; // 게임 라운드 횟수 저장 변수
 
 	char ch;
 	int s_time, j = 0;
@@ -39,7 +39,7 @@ int game_run(int level)
 	printf("   라운드 : %d", play_count);
 
 	s_time = time(0);
-	a = get_random_word(&wordLength);
+	a = get_random_word(&wordLength,level);
 	
 	event_word(a, heart);
 
@@ -67,7 +67,7 @@ int game_run(int level)
 			printf("     콤보 : %d", combo);
 			gotoxy(10, 6);
 			printf("   라운드 : %d", play_count);
-			a = get_random_word(&wordLength);
+			a = get_random_word(&wordLength,level);
 			event_word(a, heart);
 			s_time = time(0);
 			j = 0;
@@ -215,7 +215,7 @@ int game_run(int level)
 			printf("     콤보 : %d", combo);
 			gotoxy(10, 6);
 			printf("   라운드 : %d", play_count);
-			a = get_random_word(&wordLength);
+			a = get_random_word(&wordLength,level);
 			event_word(a, heart);
 			s_time = time(0);
 			j = 0;
@@ -232,7 +232,7 @@ int game_run(int level)
 			//레벨에 따른 출력 조절
 			switch (level)
 			{
-			case 7:
+			case TIMELIMIT_EASY:
 				totalScore = totalScore + (combo * 10);
 				ColorSet(7);
 				story(31);
@@ -245,13 +245,13 @@ int game_run(int level)
 				nextInput = ask_next_level();
 				switch (nextInput) {
 				case 0:
-					game_run(5);
+					game_run(TIMELIMIT_NORMAL);
 					break;
 				case 2:
 					break;
 				}
 				break;
-			case 5:
+			case TIMELIMIT_NORMAL:
 				totalScore = totalScore + (combo * 20);
 				ColorSet(7);
 				story(32);
@@ -264,13 +264,13 @@ int game_run(int level)
 				nextInput = ask_next_level();
 				switch (nextInput) {
 				case 0:
-					game_run(3);
+					game_run(TIMELIMIT_HARD);
 					break;
 				case 2:
 					break;
 				}
 				break;
-			case 3:
+			case TIMELIMIT_HARD:
 				totalScore = totalScore + (combo * 30);
 				ColorSet(7);
 				story(10);
@@ -310,7 +310,7 @@ int game_run(int level)
 			//Sleep(2000); //2초 딜레이
 			break;
 		}
-		else if (heart == 0|| play_count == 10) //목숨이 0이 되었을 때, 라운드 종료시의 점수가 낮았을 때의 동작
+		else if (heart == 0|| play_count == 8) //목숨이 0이 되었을 때, 라운드 종료시의 점수가 낮았을 때의 동작
 		{
 			totalScore = totalScore + score; //총 점수 관리
 			ColorSet(7);

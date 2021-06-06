@@ -24,7 +24,7 @@ void gotoxy(int x, int y);
 void ColorSet(int color_number);
 void texts(char text[]);
 void read_file();
-int get_random_word(int* wordLength);
+int get_random_word(int* wordLength, int L);
 void print_letter_in_box1(char* s);
 void print_letter_in_box2(char* s);
 int keyControl();
@@ -62,12 +62,18 @@ void event_word(int a, int heart);
 #define COLS_BOX 115
 #define LINES_BOX 12
 #define WORDNUM 1000 //단어개수
+#define EASY 397
+#define NORMAL 387
+#define HARD 214
 #define WORDLEN 15 //단어글자수
 #define UP 0
 #define DOWN 1
 #define SUBMIT 2
 #define SPACE_BAR 32
 #define CREDIT 200
+#define TIMELIMIT_EASY 7
+#define TIMELIMIT_NORMAL 6
+#define TIMELIMIT_HARD 5
 
 //전역 변수(배열) 선언
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 
