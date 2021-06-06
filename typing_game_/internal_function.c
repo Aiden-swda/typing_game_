@@ -71,13 +71,13 @@ int get_random_word(int *wordLength, int L) //´Ü¾î ·£´ýÀ¸·Î ²¨³»±â
 	//·£´ýÀ¸·Î ´Ü¾î ²¨³»±â
 	switch (L)
 	{
-	case 7:
+	case TIMELIMIT_EASY:
 		arrayNum = rand() % EASY;
 		break;
-	case 5:
+	case TIMELIMIT_NORMAL:
 		arrayNum = (rand() % NORMAL)+EASY;
 		break;
-	case 3:
+	case TIMELIMIT_HARD:
 		arrayNum = (rand() % HARD) + NORMAL + EASY;
 		break;
 	}

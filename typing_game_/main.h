@@ -71,6 +71,9 @@ void event_word(int a, int heart);
 #define SUBMIT 2
 #define SPACE_BAR 32
 #define CREDIT 200
+#define TIMELIMIT_EASY 7
+#define TIMELIMIT_NORMAL 6
+#define TIMELIMIT_HARD 5
 
 //전역 변수(배열) 선언
 char wordBase[WORDNUM][WORDLEN]; //2차원 배열을 생성 
