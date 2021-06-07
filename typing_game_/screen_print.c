@@ -126,8 +126,8 @@ void main_screen() // 메인 인터페이스 출력
 	for (i = 0; i < 18; i++) printf("─");
 	printf("┐");
 
-	gotoxy(x + 2, y);
-	printf("<SCORE>");
+	gotoxy(x + 1, y);
+	printf(" <DATA>");
 
 	for (j = 0; j < 3; j++) {
 		gotoxy(x, y + 1 + j);
@@ -141,7 +141,7 @@ void main_screen() // 메인 인터페이스 출력
 	for (i = 0; i < 18; i++) printf("─");
 	printf("┘");
 
-	// score창 출력
+	// DATA창 출력
 
 	x = 90;
 	y = 3;
@@ -150,8 +150,8 @@ void main_screen() // 메인 인터페이스 출력
 	for (i = 0; i < 18; i++) printf("─");
 	printf("┐");
 
-	gotoxy(x+2, y);
-	printf("<HP>");
+	gotoxy(x+1, y);
+	printf(" <HP>");
 
 	for (j = 0; j < 1; j++) {
 		gotoxy(x, y + 1 + j);
@@ -327,62 +327,62 @@ void screen() // 대화창 출력하는 함수
 void emoticon() // 첫 화면 이모티콘
 {
 	ColorSet(10);  // 둠칫 고양이 시작
-	gotoxy(84, 12);
+	gotoxy(84, 10);
 	printf("⊂_＼");
-	gotoxy(84, 13);
+	gotoxy(84, 11);
 	printf("　 ＼＼ Λ＿Λ");
-	gotoxy(84, 14);
+	gotoxy(84, 12);
 	printf("　　 ＼( 'ㅅ' ) 두둠칫");
-	gotoxy(84, 15);
+	gotoxy(84, 13);
 	printf("　　　 >　⌒＼");
-	gotoxy(84, 16);
+	gotoxy(84, 14);
 	printf("　　　/ ♥ へ＼");
-	gotoxy(84, 17);
+	gotoxy(84, 15);
 	printf("　　 /　　/　＼＼");
-	gotoxy(84, 18);
+	gotoxy(84, 16);
 	printf("　　 |　ノ　　 ＼_つ");
-	gotoxy(84, 19);
+	gotoxy(84, 17);
 	printf("　　/　/두둠칫");
-	gotoxy(84, 20);
+	gotoxy(84, 18);
 	printf("　 /　/");
-	gotoxy(84, 21);
+	gotoxy(84, 19);
 	printf("　(　(＼");
-	gotoxy(84, 22);
+	gotoxy(84, 20);
 	printf("　| |、 ＼");
-	gotoxy(84, 23);
+	gotoxy(84, 21);
 	printf("　| | ＼ ⌒)");
-	gotoxy(84, 24);
+	gotoxy(84, 22);
 	printf("　| |　　) /");
-	gotoxy(84, 25);
+	gotoxy(84, 23);
 	printf(" ノ )　  L|");
 	ColorSet(7);  // 둠칫 고양이 종료
 
 	ColorSet(10);  // 타자 이모티콘 시작
-	gotoxy(17, 13);
+	gotoxy(17, 10);
 	printf("\a☆□□□□□□☆");  // 소리난다
-	gotoxy(17, 14);
+	gotoxy(17, 11);
 	printf("□■■■□■□□");
-	gotoxy(17, 15);
+	gotoxy(17, 12);
 	printf("□■□□□■□□");
-	gotoxy(17, 16);
+	gotoxy(17, 13);
 	printf("□■■■□■■□");
-	gotoxy(17, 17);
+	gotoxy(17, 14);
 	printf("□■□□□■□□");
-	gotoxy(17, 18);
+	gotoxy(17, 15);
 	printf("□■■■□■□□");
-	gotoxy(17, 19);
+	gotoxy(17, 16);
 	printf("□□□□□□□□");
-	gotoxy(17, 20);
+	gotoxy(17, 17);
 	printf("□■■■□■□□");
-	gotoxy(17, 21);
+	gotoxy(17, 18);
 	printf("□□■□□■□□");
-	gotoxy(17, 22);
+	gotoxy(17, 19);
 	printf("□□■□□■■□");
-	gotoxy(17, 23);
+	gotoxy(17, 20);
 	printf("□■□■□■□□");
-	gotoxy(17, 24);
+	gotoxy(17, 21);
 	printf("□■□■□■□□");
-	gotoxy(17, 25);
+	gotoxy(17, 22);
 	printf("☆□□□□□□☆ game");
     // 타자 임티 종료
 
