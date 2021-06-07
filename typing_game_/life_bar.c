@@ -18,6 +18,7 @@ void life_bar(int heart) // 목숨값에 따른 체력바
 		printf("□□□□■");
 		ColorSet(7);
 		story(17);
+		Sleep(1000);
 		print_almost_die();
 		break;
 	case 2:

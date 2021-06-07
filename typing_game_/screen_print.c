@@ -64,6 +64,7 @@ int second_menu()  // 선택 화면 출력하는 함수
 	system("cls");
 	print_star();
 	gotoxy(x, y);
+	ColorSet(7);
 	printf("> ");
 	ColorSet(14);
 	printf("쉬움");
