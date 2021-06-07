@@ -333,6 +333,7 @@ int game_run(int level)
 			totalScore = totalScore + score; //총 점수 관리
 			ColorSet(7);
 			story(23);
+			Sleep(1000);
 
 			system("cls"); // 콘솔창 초기화
 			main_screen();
