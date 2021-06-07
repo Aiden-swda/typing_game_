@@ -93,12 +93,13 @@ void tmi(int i,int r)
 
 void print_help() // 도움말 출력
 {
-	gotoxy(7, 7);
-	printf("■ 화면에 표시되는 영어단어를 시간 내에 정확히 입력하세요.");
-	ColorSet(12);
-	printf(" 빠르게 입력할 수록");
 	ColorSet(7);
-	printf(" 더 많은 점수를 얻습니다.");
+	gotoxy(7, 7);
+	printf("■ 말풍선에 표시되는 영어단어를 시간 내에 정확히 입력하세요. ");
+	ColorSet(12);
+	printf("단어를 맞추면");
+	ColorSet(7);
+	printf(" 점수를 얻습니다.");
 	gotoxy(7, 10);
 	printf("□ 단어를 제한시간 내에 맞추지 못하거나 틀리면 체력이 소진되며, 체력이 모두 소진될 시 ");
 	ColorSet(14);
