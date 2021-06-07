@@ -37,6 +37,8 @@ int game_run(int level)
 	printf("     ÄÞº¸ : %d", combo);
 	gotoxy(10, 6);
 	printf("   ¶ó¿îµå : %d", play_count);
+	gotoxy(50, 5);
+	printf("TIME LIMIT : %ds", level);
 
 	s_time = time(0);
 	a = get_random_word(&wordLength,level);
@@ -67,6 +69,8 @@ int game_run(int level)
 			printf("     ÄÞº¸ : %d", combo);
 			gotoxy(10, 6);
 			printf("   ¶ó¿îµå : %d", play_count);
+			gotoxy(50, 5);
+			printf("TIME LIMIT : %ds", level);
 			a = get_random_word(&wordLength,level);
 			event_word(a, heart);
 			s_time = time(0);
@@ -227,6 +231,8 @@ int game_run(int level)
 			printf("     ÄÞº¸ : %d", combo);
 			gotoxy(10, 6);
 			printf("   ¶ó¿îµå : %d", play_count);
+			gotoxy(50, 5);
+			printf("TIME LIMIT : %ds", level);
 			a = get_random_word(&wordLength,level);
 			event_word(a, heart);
 			s_time = time(0);

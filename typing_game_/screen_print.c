@@ -267,6 +267,8 @@ void main_screen() // 메인 인터페이스 출력
 
 	gotoxy(37, 37);
 	printf("말풍선에 나오는 단어를 정확히 입력하세요!");
+
+	// 도움말 추가
 }
 
 void start_game() {
