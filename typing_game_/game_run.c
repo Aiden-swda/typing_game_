@@ -336,9 +336,7 @@ int game_run(int level)
 			Sleep(1000);
 
 			system("cls"); // 콘솔창 초기화
-			main_screen();
-			Sleep(1000);
-			system("cls"); // 콘솔창 초기화
+			
 			main_screen();
 			print_letter_in_box2("당신의 점수: ");
 			printf("%d점", score);
