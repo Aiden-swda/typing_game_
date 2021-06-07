@@ -321,7 +321,7 @@ int game_run(int level)
 				ending_credit();  // 엔딩 크레딧
 				system("cls");
 				gotoxy(COLS / 2, LINES / 2);
-				printf("\n메인메뉴로 돌아갑니다.");
+				printf("메인메뉴로 돌아갑니다.");
 				Sleep(2000);
 				break;
 			}
