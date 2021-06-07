@@ -340,7 +340,7 @@ int game_run(int level)
 			system("cls"); // 콘솔창 초기화
 			main_screen();
 			print_letter_in_box2("당신의 점수: ");
-			printf("%d", score);
+			printf("%d점", score);
 			Sleep(3000); //1초 딜레이
 
 			system("cls"); // 콘솔창 초기화
