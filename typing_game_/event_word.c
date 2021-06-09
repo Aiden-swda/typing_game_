@@ -4,7 +4,7 @@
 void event_word(int a ,int heart)
 {
 	int percent = rand() % 100;
-	if (percent < 20) //20퍼센트
+	if (percent < 20) //확률 설정
 	{
 		ColorSet(11);
 		gotoxy(COLS / 2 - 6, 9);
