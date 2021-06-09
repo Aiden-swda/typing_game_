@@ -81,7 +81,6 @@ int get_random_word(int *wordLength, int L) //단어 랜덤으로 꺼내기
 		arrayNum = (rand() % HARD) + NORMAL + EASY;
 		break;
 	}
-	//arrayNum = rand() % WORDNUM; 
 	//단어의 길이 파악
 	*wordLength = strlen(wordBase[arrayNum]) - 1;
 	return arrayNum;
