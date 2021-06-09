@@ -262,7 +262,9 @@ void main_screen() // 메인 인터페이스 출력
 	}
 
 	gotoxy(x, y + 1 + j);
-	printf("└──────────────────┘");
+	printf("└");
+	for (i = 0; i < 18; i++) printf("─");
+	printf("┘");
 
 	// 말풍선 출력
 
