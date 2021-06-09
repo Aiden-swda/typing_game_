@@ -6,15 +6,15 @@ int main()
 	int menuInput,levelInput; //사용자 입력 (메뉴선택)
 
 	//settings
-	system("mode con cols=120 lines=45");
+	system("mode con cols=120 lines=45"); //콘솔창 크기
 	system("title 건덕이를 잡아라!"); //콘솔창 제목
-	srand(time(NULL));
-	read_file();
-	system("pause");
+	srand(time(NULL)); //srand
+	read_file(); //파일 읽기
+	system("pause"); 
 	system("cls");
 	CursorView(0);
 	catchmeifyoucan();  // 처음 큰 그림 나오는거
-	Sleep(1000);        // 그림 나오는 1초*/
+	Sleep(1000);        // 그림 나오는 1초
 	while (1) {
 		system("cls");
 		//intro
@@ -41,7 +41,6 @@ int main()
 			case 6:
 				continue;
 			}
-			//game_run();
 			break;
 		case 2:
 			//도움말 보기

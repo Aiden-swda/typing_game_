@@ -13,23 +13,17 @@ int game_run(int level)
 	int letter = 0; //답이 틀리거나 맞을 때 출력될 텍스트를 위한 변수
 	int b = 0;
 	int play_count = 1; // 게임 라운드 횟수 저장 변수
-
 	char ch;
 	int s_time, j = 0;
-
 	int wordLength;
 
-	//system("mode con cols=120 lines=45"); //콘솔창 크기
 	system("cls"); // 콘솔창 초기화
 	main_screen();
-	//srand(time(NULL));
 	gotoxy(96, 4);
 	ColorSet(12);
 	printf("■■■■■"); //체력바 테스트
 	ColorSet(7);
-
 	print_full();  //건덕이 출력
-
 	srand(time(0));
 	gotoxy(10, 4);
 	printf("단계 점수 : %d", score);
@@ -39,18 +33,11 @@ int game_run(int level)
 	printf("   라운드 : %d", play_count);
 	gotoxy(50, 5);
 	printf("TIME LIMIT : %ds", level);
-
 	s_time = time(0);
-	a = get_random_word(&wordLength,level);
-	
-	event_word(a, heart);
-
-	
+	a = get_random_word(&wordLength,level);	
+	event_word(a, heart);	
 	while (1)
 	{
-		//a = get_random_word(); //배열에서 단어 추출하기 위한 랜덤 인덱스 값
-		//gotoxy(COLS / 2 - 5, 3);
-		//printf("%s\n", wordBase[a]); //배열에서 랜덤 추출된 단어 출력
 		if (time(0) == s_time + level) //시간 확인
 		{
 			ColorSet(7);
@@ -81,7 +68,6 @@ int game_run(int level)
 			ColorSet(7);
 			ch = _getch();
 			gotoxy(COLS / 2 - 5 + j, 28);
-
 			//Backspace 처리
 			if (ch == 8)
 			{
@@ -91,8 +77,6 @@ int game_run(int level)
 					printf("\b \b");
 				}
 			}
-
-			//printf("%c", ch);
 			if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
 			{
 
@@ -107,7 +91,6 @@ int game_run(int level)
 		}
 		if (b == 1)
 		{
-			//printf("%s\n", input);
 			input[wordLength] = 0;
 			for (int i = 0; wordBase[a][i] != 0; i++)  //배열값 마지막에 붙어있는 \n 제거
 			{
@@ -118,13 +101,10 @@ int game_run(int level)
 				}
 			}
 			check = strcmp(input, wordBase[a]); //문자열 비교
-			//printf("%d", check);
-			b = 0;
-			
+			b = 0;			
 			switch (check)  // 문자열 비교값에 따른 출력
 			{
 			case 0:
-				//gotoxy(COLS / 2 - 5, 10);
 				play_count++;
 				letter = rand() % 4;
 				switch (letter)
@@ -224,7 +204,6 @@ int game_run(int level)
 			system("cls");
 			main_screen();
 			life_bar(heart);
-
 			gotoxy(10, 4);
 			printf("단계 점수 : %d", score);
 			gotoxy(10, 5);
@@ -245,8 +224,6 @@ int game_run(int level)
 			gotoxy(37, 37);
 			printf("                                          ");
 			totalScore = totalScore + score; // 총 점수 관리
-
-			//gotoxy(COLS / 2 - 10, LINES / 2);
 			//레벨에 따른 출력 조절
 			switch (level)
 			{
@@ -313,7 +290,6 @@ int game_run(int level)
 						printf("[계속하려면 스페이스 바를 누르시오]");
 					}
 				}
-
 				gotoxy(32, 37);
 				printf("                                              ");
 
@@ -325,7 +301,6 @@ int game_run(int level)
 				Sleep(2000);
 				break;
 			}
-			//Sleep(2000); //2초 딜레이
 			break;
 		}
 		else if (heart == 0|| play_count == 9) //목숨이 0이 되었을 때, 라운드 종료시의 점수가 낮았을 때의 동작
@@ -334,14 +309,11 @@ int game_run(int level)
 			ColorSet(7);
 			story(23);
 			Sleep(1000);
-
 			system("cls"); // 콘솔창 초기화
-			
 			main_screen();
 			print_letter_in_box2("당신의 점수: ");
 			printf("%d점", score);
 			Sleep(3000); //1초 딜레이
-
 			system("cls"); // 콘솔창 초기화
 			print_gameover();
 			Sleep(2000); //1초 딜레이
