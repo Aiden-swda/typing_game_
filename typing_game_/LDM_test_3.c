@@ -1,4 +1,3 @@
-﻿//이다민 테스트 파일3
 #include "main.h"
 
 int game_run()
