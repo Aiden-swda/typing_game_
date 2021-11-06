@@ -1,58 +1,57 @@
-//ÀÌ´Ù¹Î Å×½ºÆ® ÆÄÀÏ
 
 
 #include "main.h"
 
 int game_run()
 {
-	char input[20]; //ÀÔ·Â¹ÞÀ» ´Ü¾î ¹è¿­
-	int a; //·£´ý ¼ýÀÚ ¹ÞÀ» º¯¼ö
-	int check; //¹®ÀÚ¿­ ºñ±³ÇÑ °ª ´ã´Â º¯¼ö
-	int score = 0; //Á¡¼ö º¯¼ö
-	int heart = 5; //³²Àº ¸ñ¼û º¯¼ö
+	char input[20]; //ìž…ë ¥ë°›ì„ ë‹¨ì–´ ë°°ì—´
+	int a; //ëžœë¤ ìˆ«ìž ë°›ì„ ë³€ìˆ˜
+	int check; //ë¬¸ìžì—´ ë¹„êµí•œ ê°’ ë‹´ëŠ” ë³€ìˆ˜
+	int score = 0; //ì ìˆ˜ ë³€ìˆ˜
+	int heart = 5; //ë‚¨ì€ ëª©ìˆ¨ ë³€ìˆ˜
 	clock_t start, end; 
-	double result; //½Ã°£°ªÀ» ÀúÀåÇÏ±â À§ÇÑ º¯¼ö
+	double result; //ì‹œê°„ê°’ì„ ì €ìž¥í•˜ê¸° ìœ„í•œ ë³€ìˆ˜
 
 
 	
-	//system("mode con cols=120 lines=45"); //ÄÜ¼ÖÃ¢ Å©±â
-	system("title °Ç´öÀÌ¸¦ Àâ¾Æ¶ó!"); //ÄÜ¼ÖÃ¢ Á¦¸ñ
-	system("cls"); // ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
+	//system("mode con cols=120 lines=45"); //ì½˜ì†”ì°½ í¬ê¸°
+	system("title ê±´ë•ì´ë¥¼ ìž¡ì•„ë¼!"); //ì½˜ì†”ì°½ ì œëª©
+	system("cls"); // ì½˜ì†”ì°½ ì´ˆê¸°í™”
 	//srand(time(NULL));
 	gotoxy(110, 0);
-	printf("¡á¡á¡á¡á¡á\n"); //Ã¼·Â¹Ù Å×½ºÆ®
+	printf("â– â– â– â– â– \n"); //ì²´ë ¥ë°” í…ŒìŠ¤íŠ¸
 	
 
 	while (1)
 	{
 		gotoxy(5, 5);
 		printf("%d", score);
-		a = get_random_word(&wordLength); //¹è¿­¿¡¼­ ´Ü¾î ÃßÃâÇÏ±â À§ÇÑ ·£´ý ÀÎµ¦½º °ª
+		a = get_random_word(&wordLength); //ë°°ì—´ì—ì„œ ë‹¨ì–´ ì¶”ì¶œí•˜ê¸° ìœ„í•œ ëžœë¤ ì¸ë±ìŠ¤ ê°’
 		gotoxy(COLS/2-5, 3);
-		printf("%s\n", wordBase[a]); //¹è¿­¿¡¼­ ·£´ý ÃßÃâµÈ ´Ü¾î Ãâ·Â
+		printf("%s\n", wordBase[a]); //ë°°ì—´ì—ì„œ ëžœë¤ ì¶”ì¶œëœ ë‹¨ì–´ ì¶œë ¥
 
 	
-		start = clock(); //½Ã°£ÃøÁ¤ ½ÃÀÛ
+		start = clock(); //ì‹œê°„ì¸¡ì • ì‹œìž‘
 		
 		gotoxy(COLS / 2 - 5, 5);
-		scanf("%s", input); //»ç¿ëÀÚ ÀÔ·Â ¹®ÀÚ¿­ ¹Þ¾Æ¿À±â
+		scanf("%s", input); //ì‚¬ìš©ìž ìž…ë ¥ ë¬¸ìžì—´ ë°›ì•„ì˜¤ê¸°
 		//gets_s(input, 20);
-		end = clock(); //½Ã°£ ÃøÁ¤ Á¤Áö
-		result = (double)(end - start) / CLOCKS_PER_SEC; //½Ã°£ ÃøÁ¤°ª
+		end = clock(); //ì‹œê°„ ì¸¡ì • ì •ì§€
+		result = (double)(end - start) / CLOCKS_PER_SEC; //ì‹œê°„ ì¸¡ì •ê°’
 		
-		printf("°æ°úÇÑ ½Ã°£: %f\n", result);
+		printf("ê²½ê³¼í•œ ì‹œê°„: %f\n", result);
 		
-		Sleep(1000); //½Ã°£ º¸±â À§ÇØ¼­ ÀÓ½Ã·Î °É¾î³õÀº µô·¹ÀÌ
-		if ((int)result >= 4) //³­ÀÌµµ Á¶Àý ºÎºÐ
+		Sleep(1000); //ì‹œê°„ ë³´ê¸° ìœ„í•´ì„œ ìž„ì‹œë¡œ ê±¸ì–´ë†“ì€ ë”œë ˆì´
+		if ((int)result >= 4) //ë‚œì´ë„ ì¡°ì ˆ ë¶€ë¶„
 		{
-			score = score - (int)(result*5); //°æ°úÇÑ ½Ã°£¿¡ ºñ·ÊÇÏ¿© Á¡¼ö Â÷°¨
-			heart = heart - 1; //¸ñ¼ûµµ °°ÀÌ Â÷°¨
+			score = score - (int)(result*5); //ê²½ê³¼í•œ ì‹œê°„ì— ë¹„ë¡€í•˜ì—¬ ì ìˆ˜ ì°¨ê°
+			heart = heart - 1; //ëª©ìˆ¨ë„ ê°™ì´ ì°¨ê°
 			
 		}
 		
-		system("cls"); // ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
+		system("cls"); // ì½˜ì†”ì°½ ì´ˆê¸°í™”
 
-		for (int i = 0; wordBase[a][i] !=0 ; i++)  //¹è¿­°ª ¸¶Áö¸·¿¡ ºÙ¾îÀÖ´Â \n Á¦°Å
+		for (int i = 0; wordBase[a][i] !=0 ; i++)  //ë°°ì—´ê°’ ë§ˆì§€ë§‰ì— ë¶™ì–´ìžˆëŠ” \n ì œê±°
 		{
 			if (wordBase[a][i] == '\n')
 			{
@@ -61,80 +60,80 @@ int game_run()
 			}
 		}
 
-		check = strcmp(input, wordBase[a]); //¹®ÀÚ¿­ ºñ±³
+		check = strcmp(input, wordBase[a]); //ë¬¸ìžì—´ ë¹„êµ
 		printf("%d", check);
 
-		switch (check)  // ¹®ÀÚ¿­ ºñ±³°ª¿¡ µû¸¥ Ãâ·Â
+		switch (check)  // ë¬¸ìžì—´ ë¹„êµê°’ì— ë”°ë¥¸ ì¶œë ¥
 		{
 		case 0:
 			gotoxy(COLS / 2 - 5, 10);
-			printf("¸Â¾Ò½À´Ï´Ù!\n");
+			printf("ë§žì•˜ìŠµë‹ˆë‹¤!\n");
 			score = score + 10;
 			break;
 		case 1:
 			gotoxy(COLS / 2 - 5, 10);
-			printf("Æ²·È½À´Ï´Ù!\n");
+			printf("í‹€ë ¸ìŠµë‹ˆë‹¤!\n");
 			heart = heart - 1;
 			break;
 		case -1:
 			gotoxy(COLS / 2 - 5, 10);
-			printf("Æ²·È½À´Ï´Ù!\n");
+			printf("í‹€ë ¸ìŠµë‹ˆë‹¤!\n");
 			heart = heart - 1;
 			break;
 		}
-		switch (heart) // ¸ñ¼û°ª¿¡ µû¸¥ Ã¼·Â¹Ù
+		switch (heart) // ëª©ìˆ¨ê°’ì— ë”°ë¥¸ ì²´ë ¥ë°”
 		{
 		case 0:
 			gotoxy(110, 0);
-			printf("¡à¡à¡à¡à¡à\n");
+			printf("â–¡â–¡â–¡â–¡â–¡\n");
 			break;
 		case 1:
 			gotoxy(110, 0);
-			printf("¡à¡à¡à¡à¡á\n");
+			printf("â–¡â–¡â–¡â–¡â– \n");
 			break;
 		case 2:
 			gotoxy(110, 0);
-			printf("¡à¡à¡à¡á¡á\n");
+			printf("â–¡â–¡â–¡â– â– \n");
 			break;
 		case 3:
 			gotoxy(110, 0);
-			printf("¡à¡à¡á¡á¡á\n");
+			printf("â–¡â–¡â– â– â– \n");
 			break; 
 		case 4:
 			gotoxy(110, 0);
-			printf("¡à¡á¡á¡á¡á\n");
+			printf("â–¡â– â– â– â– \n");
 			break;
 		case 5:
 			gotoxy(110, 0);
-			printf("¡á¡á¡á¡á¡á\n");
+			printf("â– â– â– â– â– \n");
 			break;
 		}
 		
 
-		if (score>=50) // Á¡¼ö¿¡ µû¸¥ µ¿ÀÛ
+		if (score>=50) // ì ìˆ˜ì— ë”°ë¥¸ ë™ìž‘
 		{
-			system("cls"); // ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
+			system("cls"); // ì½˜ì†”ì°½ ì´ˆê¸°í™”
 			gotoxy(COLS / 2 - 10, LINES / 2);
-			printf("1´Ü°è¸¦ Å¬¸®¾î ÇÏ¼Ì½À´Ï´Ù!");
-			Sleep(2000); //2ÃÊ µô·¹ÀÌ
+			printf("1ë‹¨ê³„ë¥¼ í´ë¦¬ì–´ í•˜ì…¨ìŠµë‹ˆë‹¤!");
+			Sleep(2000); //2ì´ˆ ë”œë ˆì´
 			return 1;
 			break;
 		}
-		else if (heart==0) //¸ñ¼ûÀÌ 0ÀÌ µÇ¾úÀ»¶§ÀÇ µ¿ÀÛ
+		else if (heart==0) //ëª©ìˆ¨ì´ 0ì´ ë˜ì—ˆì„ë•Œì˜ ë™ìž‘
 		{
-			system("cls"); // ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
+			system("cls"); // ì½˜ì†”ì°½ ì´ˆê¸°í™”
 			gotoxy(COLS / 2-10, LINES / 2);
-			printf("°Ç´öÀÌ°¡ Å»ÃâÇß´Ù!¤Ð¤Ð\n");
+			printf("ê±´ë•ì´ê°€ íƒˆì¶œí–ˆë‹¤!ã… ã… \n");
 			Sleep(1000);
-			system("cls"); // ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
+			system("cls"); // ì½˜ì†”ì°½ ì´ˆê¸°í™”
 			gotoxy(COLS / 2 - 10, LINES / 2);
-			printf("´ç½ÅÀÇ Á¡¼ö: %d", score);
-			Sleep(1000); //1ÃÊ µô·¹ÀÌ
+			printf("ë‹¹ì‹ ì˜ ì ìˆ˜: %d", score);
+			Sleep(1000); //1ì´ˆ ë”œë ˆì´
 			
-			system("cls"); // ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
+			system("cls"); // ì½˜ì†”ì°½ ì´ˆê¸°í™”
 			gotoxy(COLS / 2 - 10, LINES / 2);
-			printf("°ÔÀÓ¿À¹ö");
-			Sleep(1000); //1ÃÊ µô·¹ÀÌ
+			printf("ê²Œìž„ì˜¤ë²„");
+			Sleep(1000); //1ì´ˆ ë”œë ˆì´
 			return 0;
 			break;
 		}
